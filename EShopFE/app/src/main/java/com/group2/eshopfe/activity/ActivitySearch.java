@@ -1,14 +1,16 @@
-package com.group2.eshopfe;
+package com.group2.eshopfe.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ActivityCustomer extends AppCompatActivity {
+import com.group2.eshopfe.R;
+
+public class ActivitySearch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer);
+        setContentView(R.layout.activity_search);
     }
 }

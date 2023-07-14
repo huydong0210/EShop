@@ -1,14 +1,16 @@
-package com.group2.eshopfe;
+package com.group2.eshopfe.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ActivitySignUp extends AppCompatActivity {
+import com.group2.eshopfe.R;
+
+public class ActivityProduct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_product);
     }
 }

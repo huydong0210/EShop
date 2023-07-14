@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogin">
+    tools:context=".activity.ActivityLogin">
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/loginText"
@@ -31,7 +32,7 @@
             android:layout_marginRight="20dp"
             android:ems="10"
             android:inputType="phone"
-            android:text="Username/Email/Handphone" />
+           android:hint="@string/user_name" />
 
         <EditText
             android:id="@+id/passText"
@@ -42,7 +43,7 @@
             android:layout_marginRight="20dp"
             android:ems="10"
             android:inputType="number"
-            android:text="Password" />
+            android:hint="@string/password" />
 
         <Button
             android:id="@+id/button"

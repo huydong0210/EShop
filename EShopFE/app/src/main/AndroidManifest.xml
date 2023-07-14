@@ -13,22 +13,28 @@
         android:theme="@style/Theme.EShopFE"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityLogo"
+            android:name=".activity.ActivitySearch"
             android:exported="false" />
         <activity
-            android:name=".ActivityProduct"
+            android:name=".activity.ActivityInfomation"
             android:exported="false" />
         <activity
-            android:name=".ActivityCustomer"
+            android:name=".activity.ActivityLogo"
             android:exported="false" />
         <activity
-            android:name=".ActivitySignUp"
+            android:name=".activity.ActivityProduct"
             android:exported="false" />
         <activity
-            android:name=".ActivityLogin"
+            android:name=".activity.ActivityLogin$ActivityCustomer"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.ActivitySignUp"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityLogin"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
