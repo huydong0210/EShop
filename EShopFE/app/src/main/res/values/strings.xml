@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">EShopFE</string>
+    <string name="app_name">EShop</string>
+    <string name="toolBarTitleName">EShop</string>
+    <string name="titleListItems">All products</string>
 </resources>

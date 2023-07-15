@@ -13,6 +13,39 @@
         android:theme="@style/Theme.EShopFE"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ActivityContact"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityHat"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation$ActivityCosmetics"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation$ActivityHouseware"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation$ActivityFootwear"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation$ActivityClothes"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation$ActivityCard"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCustomerInformation"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityProductDetail"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityRegister"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityLogin"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
