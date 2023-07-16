@@ -2,128 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/blue"
     tools:context=".activity.ActivityCustomerInformation">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="492dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/border"
-        android:gravity="center"
-        android:orientation="vertical">
 
-        <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbardep"
+        android:background="@color/blue"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="5dp"
-            android:text="Thông tin khách hàng"
-            android:textColor="@color/blue"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="10dp"
+            app:srcCompat="?attr/actionModeCloseDrawable"
+            app:titleTextColor="#fff"
+            app:title="Thông tin khách hàng"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/customerInfo"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"
+            android:layout_width="230dp"/>
+</androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="116dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/customer"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tenkhachhang"
-                android:layout_width="fill_parent"
-                android:drawableTint="#FF4081"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:inputType="text"
-                android:hint="Nhập tên khách hàng" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sodienthoai"
-                android:layout_width="fill_parent"
-                android:drawableTint="#FF4081"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:inputType="phone"
-                android:hint="Nhập số điện thoại" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
-                android:layout_width="fill_parent"
-                android:drawableTint="#FF4081"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:inputType="textEmailAddress"
-                android:hint="Nhập email" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/diachi"
-                android:layout_width="fill_parent"
-                android:drawableTint="#FF4081"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:inputType="text"
-                android:hint="Nhập địa chỉ" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/namecustomer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonxacnhan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@color/blue"
-                android:padding="10dp"
-                android:text="Xác nhận"
-                android:textColor="#fff"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/buttontrove"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:background="@color/blue"
-                android:padding="10dp"
-                android:text="Trở về"
-                android:textColor="#FFF"
-                android:textSize="15sp" />
-
-        </LinearLayout>
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="42dp"
+            android:textColor="@color/blue"
+            android:textSize="23dp"
+            android:text="Bùi Huy Đông" />
 
     </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listviewcustomer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -2,4 +2,5 @@
     <string name="app_name">EShop</string>
     <string name="toolBarTitleName">EShop</string>
     <string name="titleListItems">All products</string>
+    <string name="customerInfo">Thông tin khách hàng</string>
 </resources>
