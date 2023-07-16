@@ -8,12 +8,26 @@
     tools:context=".activity.ActivityClothes">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarao"
-        android:background="@color/blue"
-        app:titleTextColor="#fff"
-        app:title="Quần áo"
+        android:id="@+id/toolbarquanao"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue">
+        <ImageView
+            android:id="@+id/btn_back_qa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Quần áo"
+            android:textSize="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <ListView
         android:id="@+id/listviewao"

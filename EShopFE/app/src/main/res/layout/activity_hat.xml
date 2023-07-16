@@ -7,13 +7,27 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".activity.ActivityHat">
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbarmu"
-    android:background="@color/blue"
-    app:titleTextColor="#fff"
-    app:title="Mũ nón"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarmu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue">
+        <ImageView
+            android:id="@+id/btn_back_mu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Mũ nón"
+            android:textSize="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
 
 <ListView
     android:id="@+id/listviewmu"
