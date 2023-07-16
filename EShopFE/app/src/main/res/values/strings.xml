@@ -5,4 +5,11 @@
     <string name="customerInfo">Thông tin khách hàng</string>
     <string name="addproduct">Thêm sản phẩm</string>
     <string name="nameProduct">Tên sản phẩm:</string>
+    <string name="price">Giá tiền (VNĐ):</string>
+    <string name="detailsInfo">Thông tin chi tiết</string>
+    <string name="list">Danh mục:</string>
+    <string name="choose">Chọn</string>
+    <string name="product">Nhà sản xuất:</string>
+    <string name="brand">Thương hiệu:</string>
+    <string name="source">Xuất xứ:</string>
 </resources>

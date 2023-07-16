@@ -1,8 +1,8 @@
 package com.group2.eshopfe.modul;
 public class ProductType {
-    public int id;
-    public String nameProductType;
-    public String imageProductType;
+    private int id;
+    private String nameProductType;
+    private String imageProductType;
 
     public ProductType(int id, String nameProductType, String imageProductType) {
         this.id = id;

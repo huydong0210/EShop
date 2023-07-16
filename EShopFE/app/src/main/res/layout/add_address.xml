@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ActivityClothes">
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbaraddress"-->
+<!--        android:background="@color/blue"-->
+<!--        app:titleTextColor="#fff"-->
+<!--        app:title="Địa chỉ nhận hàng"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize" >-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+    <LinearLayout
+        android:id="@+id/layout_add"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blue"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_add_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn địa chỉ nhận hàng"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+
+        <ImageView
+            android:id="@+id/btn_refresh"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="70dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_refresh_black_24dp" />
+
+        <ImageView
+            android:id="@+id/btn_save"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_check_black_24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="293dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Thêm địa chỉ"
+            android:textColor="@color/blue"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/edt_tensp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:hint="Nhập địa chỉ"
+            android:textColor="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_add" />
+
+        <TextView
+            android:id="@+id/textViewnguoinhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Thêm tên người nhận"
+            android:textColor="@color/blue"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/edt_nguoinhan"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:hint="Nhập tên"
+            android:textColor="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_add" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listviewaddress"
+        android:layout_width="match_parent"
+        android:layout_height="373dp"></ListView>
+
+</LinearLayout>
