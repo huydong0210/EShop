@@ -25,6 +25,12 @@ public class Product {
     private String price;
     @Column(name = "unit")
     private String unit;
+
+    @OneToOne(mappedBy = "product")
+    private OrderDetails orderDetails;
+
+    @OneToOne(mappedBy = "product")
+    private Inventory inventory;
     public Product(){
 
     }
