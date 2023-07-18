@@ -3,6 +3,7 @@ package com.group2.eshopbe.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -39,5 +40,4 @@ public class EUser {
     private List<Order> orders;
     public EUser() {
     }
-
 }

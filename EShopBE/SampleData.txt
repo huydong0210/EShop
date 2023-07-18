@@ -1,0 +1,23 @@
+insert into user (email, first_name, last_name, password, phone, username)
+values ('huydong0210@gmail.com','bui','dong','$2a$10$dCCuCcssKDU6D7k1LrW4WuxUspeiaLPgQ8k8pBkn71B3CvunhTXXi', '0986856503','huydong');
+
+insert into role (id, name) values (1, 'ROLE_ADMIN');
+insert into role (id, name) values (2, 'ROLE_USER');
+
+
+insert into product(description, price, product_name, unit)
+values ('test','10000',N'chảo', N'cái');
+
+insert into user_role (user_id, role_id) values (1,1);
+insert into user_role (user_id, role_id) values (1,2)
+
+insert into orders(id, status, total_price, user_id)
+values (1, N'Đang lấy hàng', 100000, 1);
+
+insert into order_details (id, amount, orders_id, product_id)
+values (1, 10, 1 , 1);
+
+insert into  inventory(id, quantity, product_id)
+values (1,10,1)
+
+
