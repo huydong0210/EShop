@@ -1,7 +1,10 @@
 package com.group2.eshopbe.controller;
 
+import com.group2.eshopbe.entity.EUser;
 import com.group2.eshopbe.payload.request.LoginRequest;
+import com.group2.eshopbe.payload.request.SignUpRequest;
 import com.group2.eshopbe.payload.response.ResponseObject;
+import com.group2.eshopbe.repository.UserRepository;
 import com.group2.eshopbe.security.jwt.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +25,8 @@ public class UserJwtController {
     private AuthenticationManagerBuilder authenticationManagerBuilder;
     @Autowired
     private TokenProvider tokenProvider;
+    @Autowired
+    private UserRepository userRepository;
     @PostMapping("/authenticate")
     public ResponseEntity<ResponseObject> authenticate(@RequestBody LoginRequest loginRequest) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(

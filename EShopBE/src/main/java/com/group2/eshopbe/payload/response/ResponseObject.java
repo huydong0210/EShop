@@ -8,6 +8,8 @@ import java.util.Objects;
 @Getter
 @Setter
 public class ResponseObject {
+    public static final String SUCCESS = "success";
+    public static final String FAIL ="FAIL";
     private String status;
     private String message;
     private Object data;

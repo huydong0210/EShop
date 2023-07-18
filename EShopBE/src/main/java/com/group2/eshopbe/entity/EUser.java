@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,7 +16,7 @@ public class EUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "username")
+    @Column(name = "username",unique = true)
     private String username;
     @Column(name = "password")
     private String password;
@@ -25,31 +27,15 @@ public class EUser {
     private String lastname;
     @Column(name = "email")
     private String email;
+    @Column(name = "phone")
+    private String phone;
 
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles;
     public EUser() {
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 }

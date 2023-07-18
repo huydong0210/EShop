@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EUserDetails implements UserDetails {
     private String username;
@@ -19,10 +20,9 @@ public class EUserDetails implements UserDetails {
         this.roles=roles;
     }
     public static EUserDetails build(EUser user){
-        GrantedAuthority role = new SimpleGrantedAuthority("ROLE_USER");
-        List<GrantedAuthority> roles = new ArrayList<>();
-        roles.add(role);
-        return new EUserDetails(user.getUsername(),user.getPassword(),roles);
+        List<GrantedAuthority> authorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        return new EUserDetails(user.getUsername(),user.getPassword(),authorities);
     }
 
 

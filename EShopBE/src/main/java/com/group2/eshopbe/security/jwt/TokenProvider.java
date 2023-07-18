@@ -30,10 +30,10 @@ public class TokenProvider {
     }
 
     public String createToken (Authentication authentication){
-        EUserDetails userDetails = (EUserDetails) authentication.getPrincipal();
+        String authorities = authentication.getAuthorities().stream().map(GrantedAuthority :: getAuthority).collect(Collectors.joining(","));
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .claim(AUTHORITIES_KEY, "ROLE_USER")
+                .setSubject(authentication.getName())
+                .claim(AUTHORITIES_KEY, authorities)
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS512, secretKey)
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationTime))
