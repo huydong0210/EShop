@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sign_up.activity.SignUpActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="Đăng kí"
+        android:textColor="#0000FF"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/editTextSignUpUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Tên đăng nhập"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextSignUpPassword"
+        android:layout_width="match_parent"
+        android:hint="Password"
+        android:layout_height="50dp"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editTextSignUpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextSignUpPhone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Số điện thoại"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonSignUpSignUp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#0000FF"
+        android:text="Đăng kí"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/buttonSignUpLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#0000FF"
+        android:text="Đăng nhập"
+        android:textColor="#fff" />
+
+</LinearLayout>

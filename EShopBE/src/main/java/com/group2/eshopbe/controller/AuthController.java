@@ -58,6 +58,8 @@ public class AuthController {
         EUser user= new EUser();
         user.setUsername(signUpRequest.getUsername());
         user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
+        user.setEmail(signUpRequest.getEmail());
+        user.setPhone(signUpRequest.getPhone());
         List<Role> roles = new ArrayList<>();
         roles.add(roleRepository.findByName(AuthorityConstants.ROLE_USER).get());
         user.setRoles(roles);
