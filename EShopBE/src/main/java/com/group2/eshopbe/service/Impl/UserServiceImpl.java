@@ -13,9 +13,5 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
 
 
-    @Override
-    public EUser signUp(SignUpRequest signUpRequest) {
 
-        return null;
-    }
 }

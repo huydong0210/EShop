@@ -1,5 +1,6 @@
 package com.group2.eshopbe.config;
 
+import com.group2.eshopbe.security.AuthorityConstants;
 import com.group2.eshopbe.security.EUserDetailsService;
 import com.group2.eshopbe.security.jwt.JwtEntryPoint;
 import com.group2.eshopbe.security.jwt.JwtTokenFilter;
@@ -54,6 +55,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/authenticate").permitAll()
                 .and().authorizeRequests()
                 .antMatchers("/api/sign-up").permitAll()
+                .and().authorizeRequests()
+                .antMatchers("/api/admin/**").hasAnyAuthority(AuthorityConstants.ROLE_ADMIN)
                 .and().authorizeRequests()
                 .antMatchers("/api/**").authenticated()
                 .and().authorizeRequests()
