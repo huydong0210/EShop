@@ -16,8 +16,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ClothesAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<Product> arrayListClothes;
+    private Context context;
+    private ArrayList<Product> arrayListClothes;
 
     public ClothesAdapter(Context context, ArrayList<Product> arrayListClothes) {
         this.context = context;

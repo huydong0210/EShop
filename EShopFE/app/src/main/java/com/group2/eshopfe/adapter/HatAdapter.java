@@ -16,8 +16,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class HatAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<Product> arrayListHat;
+    private Context context;
+    private ArrayList<Product> arrayListHat;
 
     public HatAdapter(Context context, ArrayList<Product> arrayListHat) {
         this.context = context;

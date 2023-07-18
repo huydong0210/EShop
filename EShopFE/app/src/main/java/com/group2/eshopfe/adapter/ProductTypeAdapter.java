@@ -14,8 +14,8 @@ import com.group2.eshopfe.modul.ProductType;
 import java.util.ArrayList;
 
 public class ProductTypeAdapter extends BaseAdapter {
- ArrayList<ProductType> arrayList;
- Context context;
+ private ArrayList<ProductType> arrayList;
+ private Context context;
 
     public ProductTypeAdapter(ArrayList<ProductType> arrayList, Context context) {
         this.arrayList = arrayList;

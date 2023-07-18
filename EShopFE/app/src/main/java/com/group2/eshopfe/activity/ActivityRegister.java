@@ -21,7 +21,6 @@ public class ActivityRegister extends AppCompatActivity {
     private Button btnLogin;
     private ProgressDialog pDialog;
 
-    public static final String REGISTER_URL = Server.signup;
 
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";

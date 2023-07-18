@@ -16,8 +16,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class CometicsAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<Product> arrayListCometics;
+    private Context context;
+    private ArrayList<Product> arrayListCometics;
 
     public CometicsAdapter (Context context, ArrayList<Product> arrayListCometics) {
         this.context = context;

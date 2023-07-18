@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.group2.eshopfe.MainActivity;
 import com.group2.eshopfe.R;
 
 import java.util.HashMap;
@@ -42,14 +41,12 @@ public class ActivityLogin extends AppCompatActivity {
      * URL : URL_LOGIN
      * param : KEY_USERNAME KEY_PASSWORD
      */
-    public static final String URL_LOGIN = Server.signin;
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        userLocalStore  = new UserLocalStore(this);
         addControl();
         addEvent();
     }
@@ -94,61 +91,10 @@ public class ActivityLogin extends AppCompatActivity {
 
         if (checkEditText(edtUserName) && checkEditText(edtPassWord)) {
             pDialog.show();
-            StringRequest requestLogin = new StringRequest(Request.Method.POST, URL_LOGIN,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            Log.d(TAG, response);
-                            String message = "";
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                if (jsonObject.getInt("success") == 1) {
-//                                    Account account = new Account();
-//                                    account.setUserName(jsonObject.getString("user_name"));
-//                                    account.setEmail(jsonObject.getString("email"));
-//                                    message = jsonObject.getString("message");
-//                                    Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
-//
-//                                    //Save
-//                                    User user = new User(jsonObject.getString("email"),
-//                                            jsonObject.getString("user_name"),
-//                                            jsonObject.getString("password"));
-//                                    userLocalStore.storeUserData(user);
-//                                    userLocalStore.setUserLoggedIn(true);
-//                                    //End
-                                    Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
-                                    // intent.putExtra("login", account);
-                                    startActivity(intent);
-                                }else {
-                                    message = jsonObject.getString("message");
-                                    Toast.makeText(ActivityLogin.this, message, Toast.LENGTH_SHORT).show();
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            pDialog.dismiss();
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            VolleyLog.d(TAG, "Error: " + error.getMessage());
-                            pDialog.dismiss();
-                        }
-                    }) {
-                /**
-                 * set paramater
-                 * */
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put(KEY_USERNAME, username);
-                    params.put(KEY_PASSWORD, password);
-                    return params;
-                }
-            };
-            RequestQueue queue = Volley.newRequestQueue(this);
-            queue.add(requestLogin);
+            // if login successful
+            Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
+            //intent.putExtra("login", account);
+            startActivity(intent);
         }
     }
 
