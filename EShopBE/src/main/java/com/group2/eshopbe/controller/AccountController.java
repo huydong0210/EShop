@@ -22,7 +22,7 @@ public class AccountController {
 
     @RequestMapping("/account")
     public ResponseEntity<ResponseObject> getCurrentUserDTO() {
-        Optional<EUser> user = userRepository.findByUsername(SecurityUtils.getCurrentUserJWT().get());
+        Optional<EUser> user = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get());
         if (user.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK)
                     .body(new ResponseObject(ResponseObject.SUCCESS, "current user login", Mapper.buildUserDTO(user.get())));
