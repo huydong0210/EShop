@@ -1,6 +1,8 @@
 package com.group2.eshopfe.login.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.group2.eshopfe.R;
+import com.group2.eshopfe.home.activity.HomeActivity;
 import com.group2.eshopfe.login.model.LoginRequest;
 import com.group2.eshopfe.login.service.ApiLoginService;
 import com.group2.eshopfe.login.service.LoginService;
@@ -54,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
     private void login(){
         LoginRequest loginRequest = new LoginRequest(editTextUsername.getText().toString(), editTextPassword.getText().toString());
         ResponseObject response = LoginService.login(loginRequest);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         if (response.getStatus().equals(ResponseObject.FAIL)){
             Toast toast = Toast.makeText(this, response.getMessage(),Toast.LENGTH_SHORT);
             toast.show();
@@ -65,6 +69,14 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this,"Đăng nhập thất bại",Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        ResponseObject res = response.body();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("authToken", res.getData().toString());
+                        editor.apply();
+
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        startActivity(intent);
+
                     }
                 }
 
