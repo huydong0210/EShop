@@ -3,7 +3,6 @@ package com.group2.eshopbe.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -38,6 +37,12 @@ public class EUser {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private List<Order> orders;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Image image;
+
+
     public EUser() {
     }
 }

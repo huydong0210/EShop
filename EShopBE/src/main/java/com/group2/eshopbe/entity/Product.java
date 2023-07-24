@@ -1,10 +1,10 @@
 package com.group2.eshopbe.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -31,6 +31,11 @@ public class Product {
 
     @OneToOne(mappedBy = "product")
     private Inventory inventory;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Image image;
+
     public Product(){
 
     }
