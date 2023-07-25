@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.group2.eshopfe.R;
+import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.home.activity.HomeActivity;
 import com.group2.eshopfe.login.model.LoginRequest;
 import com.group2.eshopfe.login.service.ApiLoginService;
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     private void login(){
         LoginRequest loginRequest = new LoginRequest(editTextUsername.getText().toString(), editTextPassword.getText().toString());
         ResponseObject response = LoginService.login(loginRequest);
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE);
         if (response.getStatus().equals(ResponseObject.FAIL)){
             Toast toast = Toast.makeText(this, response.getMessage(),Toast.LENGTH_SHORT);
             toast.show();

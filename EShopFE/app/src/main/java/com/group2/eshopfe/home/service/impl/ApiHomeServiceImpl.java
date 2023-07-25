@@ -63,4 +63,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
     public Call<ResponseObject> getCurrentUserDTO() {
         return apiHomeService.getCurrentUserDTO();
     }
+
+    @Override
+    public Call<ResponseObject> getAllProducts() {
+        return apiHomeService.getAllProducts();
+    }
 }

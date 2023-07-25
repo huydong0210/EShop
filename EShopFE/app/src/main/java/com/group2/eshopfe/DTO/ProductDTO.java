@@ -1,27 +1,33 @@
-package com.group2.eshopfe.home.model;
+package com.group2.eshopfe.DTO;
 
 import java.io.Serializable;
 
-public class HomeProduct implements Serializable {
+public class ProductDTO implements Serializable {
+
+    private Long id;
     private float price;
     private String productName;
     private String description;
-    private int image;
-    public HomeProduct(){
+
+    private String unit;
+    private int inventory;
+    public ProductDTO(){
 
     }
 
-    public HomeProduct(float price, String productName, String description) {
+    public ProductDTO(float price, String productName, String description) {
         this.price = price;
         this.productName = productName;
         this.description = description;
     }
 
-    public HomeProduct(float price, String productName, String description, int image) {
+    public ProductDTO(Long id, float price, String productName, String description, String unit, int inventory) {
+        this.id = id;
         this.price = price;
         this.productName = productName;
         this.description = description;
-        this.image = image;
+        this.unit = unit;
+        this.inventory = inventory;
     }
 
     public float getPrice() {
@@ -48,11 +54,27 @@ public class HomeProduct implements Serializable {
         this.description = description;
     }
 
-    public int getImage() {
-        return image;
+    public Long getId() {
+        return id;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
     }
 }

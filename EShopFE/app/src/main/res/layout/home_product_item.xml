@@ -18,30 +18,25 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewHomeProductPrice"
+                android:id="@+id/textViewHomeProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textViewHomeProductProductPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/textViewHomeProductProductName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/textViewHomeProductDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
 
             <Button
                 android:id="@+id/buttonHomeProductAddToCart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thêm vào giỏ hàng" />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -23,5 +23,7 @@ public interface ApiHomeService {
     public void setSharedPreferences(SharedPreferences sharedPreferences);
     @GET("/api/account")
     Call<ResponseObject> getCurrentUserDTO();
+    @GET("/api/products")
+    Call<ResponseObject> getAllProducts();
 
 }
