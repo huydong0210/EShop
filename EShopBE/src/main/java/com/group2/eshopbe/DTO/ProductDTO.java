@@ -13,15 +13,26 @@ public class ProductDTO {
 
     private String unit;
     private int inventory;
+    private byte[] image;
     public ProductDTO() {
     }
 
-    public ProductDTO(Long id, float price, String productName, String description, String unit, int inventory) {
+//    public ProductDTO(Long id, float price, String productName, String description, String unit, int inventory) {
+//        this.id = id;
+//        this.price = price;
+//        this.productName = productName;
+//        this.description = description;
+//        this.unit = unit;
+//        this.inventory = inventory;
+//    }
+
+    public ProductDTO(Long id, float price, String productName, String description, String unit, int inventory, byte[] image) {
         this.id = id;
         this.price = price;
         this.productName = productName;
         this.description = description;
         this.unit = unit;
         this.inventory = inventory;
+        this.image = image;
     }
 }

@@ -14,6 +14,6 @@ public class Mapper {
     }
     public static ProductDTO buildProductDTO(Product product){
         return new ProductDTO(product.getId(), product.getPrice(), product.getProductName(), product.getDescription()
-        ,product.getUnit(), product.getInventory().getQuantity());
+        ,product.getUnit(), product.getInventory().getQuantity(),product.getImage().getImageData());
     }
 }

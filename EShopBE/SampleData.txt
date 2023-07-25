@@ -1,3 +1,5 @@
+
+use Eshop;
 insert into user (email, first_name, last_name, password, phone, username)
 values ('huydong0210@gmail.com','bui','dong','$2a$10$dCCuCcssKDU6D7k1LrW4WuxUspeiaLPgQ8k8pBkn71B3CvunhTXXi', '0986856503','huydong');
 
@@ -5,19 +7,67 @@ insert into role (id, name) values (1, 'ROLE_ADMIN');
 insert into role (id, name) values (2, 'ROLE_USER');
 
 
-insert into product(description, price, product_name, unit)
-values ('test','10000',N'chảo', N'cái');
-
 insert into user_role (user_id, role_id) values (1,1);
-insert into user_role (user_id, role_id) values (1,2)
+insert into user_role (user_id, role_id) values (1,2);
 
-insert into orders(id, status, total_price, user_id)
-values (1, N'Đang lấy hàng', 100000, 1);
+insert into product(id, description, price, product_name, unit, image_id)
+values (1
+        , N'Chảo trơn được làm bằng hợp kim nhôm nguyên chất siêu bền, chống trầy xước tốt cũng như có khả năng chịu được nhiệt độ cao.'
+        ,100000
+        ,N'CHẢO CHỐNG DÍNH CAO CẤP 18CM'
+        ,N'Cái'
+        ,1);
+insert into product(id, description, price, product_name, unit, image_id)
+values (2
+        , N'Cấu tạo đáy 3 lớp truyền nhiệt nhanh, giữ nhiệt tốt, hạn chế cháy khét thực phẩm'
+        ,216000
+        ,N'Nồi Inox 3 Đáy SUNHOUSE Đáy Từ 20cm SH22120'
+        ,N'Cái'
+        ,2);
+insert into product(id, description, price, product_name, unit, image_id)
+values (3
+        , N'Nồi cơm điện mini SUNHOUSE 1.2L SHD8217W có thiết kế trắng hồng độc đáo, tô điểm thêm cho không gian bếp.'
+        ,216000
+        ,N'Nồi cơm điện mini SUNHOUSE 1.2L SHD8217W'
+        ,N'Cái'
+        ,3);
 
-insert into order_details (id, amount, orders_id, product_id)
-values (1, 10, 1 , 1);
+insert into product(id, description, price, product_name, unit, image_id)
+values (4
+        , N'Bề mặt thớt tre tự nhiên SUNHOUSE KS-CH3020B được phủ lớp sơn gốc nước- loại sơn an toàn khi tiếp xúc thực phẩm'
+        ,80000
+        ,N'Thớt tre tự nhiên SUNHOUSE KS-CH3020B'
+        ,N'Cái'
+        ,4);
 
-insert into  inventory(id, quantity, product_id)
-values (1,10,1)
+insert into product(id, description, price, product_name, unit, image_id)
+values (5
+        , N'Thiết kế chuôi dao không quá cầu kỳ và được sản xuất nhựa PP nguyên sinh cao cấp, chắc chắn, tạo cho người dùng cảm giác thuận tiện và dễ dàng trong thao tác thái, chế biến thực phẩm.'
+        ,105000
+        ,N'Bộ dao 2 chiếc Eco Family SUNHOUSE KS-KN2E1'
+        ,N'Bộ'
+        ,5);
+
+insert into product(id, description, price, product_name, unit, image_id)
+values (6
+        , N'Thiết kế chuôi dao không quá cầu kỳ và được sản xuất nhựa PP nguyên sinh cao cấp, chắc chắn, tạo cho người dùng cảm giác thuận tiện và dễ dàng trong thao tác thái, chế biến thực phẩm.'
+        ,40000
+        ,N'Bộ Cối chày bằng gỗ'
+        ,N'Bộ'
+        ,6);
+insert into inventory(id, quantity, product_id)
+values (1,10,1);
+insert into inventory(id, quantity, product_id)
+values (2,30,2);
+insert into inventory(id, quantity, product_id)
+values (3,5,3);
+insert into inventory(id, quantity, product_id)
+values (4,12,4);
+insert into inventory(id, quantity, product_id)
+values (5,30,5);
+insert into inventory(id, quantity, product_id)
+values (6,40,6);
+
+
 
 
