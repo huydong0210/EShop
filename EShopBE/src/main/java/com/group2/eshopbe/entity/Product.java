@@ -22,7 +22,7 @@ public class Product {
     private String description;
 
     @Column(name = "price")
-    private String price;
+    private float price;
     @Column(name = "unit")
     private String unit;
 

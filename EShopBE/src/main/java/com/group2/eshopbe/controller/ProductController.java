@@ -1,5 +1,9 @@
 package com.group2.eshopbe.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.group2.eshopbe.DTO.Mapper;
+import com.group2.eshopbe.DTO.ProductDTO;
 import com.group2.eshopbe.entity.Product;
 import com.group2.eshopbe.payload.response.ResponseObject;
 import com.group2.eshopbe.repository.ProductRepository;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,9 +26,14 @@ public class ProductController {
     ProductRepository productRepository;
 
     @GetMapping
-    public ResponseEntity<ResponseObject> getAllProducts() {
+    public ResponseEntity<ResponseObject> getAllProducts() throws JsonProcessingException {
+        List<ProductDTO> productDTOList = new ArrayList<>();
         List<Product> products = productRepository.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseObject(ResponseObject.SUCCESS, "", products));
+        products.stream().forEach(product -> {
+            productDTOList.add(Mapper.buildProductDTO(product));
+        });
+        ObjectMapper objectMapper =new ObjectMapper();
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseObject(ResponseObject.SUCCESS, "", objectMapper.writeValueAsString(productDTOList)));
     }
     @GetMapping("/{id}")
     public ResponseEntity<ResponseObject> getProductById(@PathVariable Long id){
