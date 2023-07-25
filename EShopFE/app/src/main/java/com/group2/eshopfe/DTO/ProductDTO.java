@@ -11,6 +11,7 @@ public class ProductDTO implements Serializable {
 
     private String unit;
     private int inventory;
+    private byte[] image;
     public ProductDTO(){
 
     }
@@ -76,5 +77,13 @@ public class ProductDTO implements Serializable {
 
     public void setInventory(int inventory) {
         this.inventory = inventory;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
