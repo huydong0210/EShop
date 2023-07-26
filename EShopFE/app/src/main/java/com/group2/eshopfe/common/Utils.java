@@ -1,5 +1,8 @@
 package com.group2.eshopfe.common;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.ByteArrayOutputStream;
 import java.util.zip.Inflater;
 
@@ -21,5 +24,10 @@ public class Utils {
         } catch (Exception ignored) {
         }
         return outputStream.toByteArray();
+    }
+    public static Bitmap convertBytesToBitMap(byte[] data){
+        byte[] image = Utils.decompressImage(data);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, data.length);
+        return bitmap;
     }
 }

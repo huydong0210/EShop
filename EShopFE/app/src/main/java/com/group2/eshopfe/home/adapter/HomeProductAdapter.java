@@ -46,9 +46,9 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
         textViewHomeProductProductName.setText(sp.getProductName());
         textViewHomeProductPrice.setText(sp.getPrice() + "");
     //    textViewHomeProductDescription.setText(sp.getDescription());
-        byte[] data = Utils.decompressImage(sp.getImage());
-        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-        imageViewHomeProduct.setImageBitmap(bitmap);
+//        byte[] data = Utils.decompressImage(sp.getImage());
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+        imageViewHomeProduct.setImageBitmap(Utils.convertBytesToBitMap(sp.getImage()));
 
 
         return homeProductItemView;
