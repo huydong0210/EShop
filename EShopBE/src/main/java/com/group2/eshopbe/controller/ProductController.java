@@ -32,8 +32,7 @@ public class ProductController {
         products.stream().forEach(product -> {
             productDTOList.add(Mapper.buildProductDTO(product));
         });
-        ObjectMapper objectMapper =new ObjectMapper();
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseObject(ResponseObject.SUCCESS, "", objectMapper.writeValueAsString(productDTOList)));
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseObject(ResponseObject.SUCCESS, "", Mapper.convertObjectToJson(productDTOList)));
     }
     @GetMapping("/{id}")
     public ResponseEntity<ResponseObject> getProductById(@PathVariable Long id){

@@ -25,7 +25,7 @@ public class AccountController {
         Optional<EUser> user = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get());
         if (user.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK)
-                    .body(new ResponseObject(ResponseObject.SUCCESS, "current user login", Mapper.buildUserDTO(user.get())));
+                    .body(new ResponseObject(ResponseObject.SUCCESS, "current user login", Mapper.convertObjectToJson(Mapper.buildUserDTO(user.get()))));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseObject(ResponseObject.FAIL, "", null));
         }
