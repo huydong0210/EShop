@@ -7,32 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.group2.eshopfe.DTO.Mapper;
 import com.group2.eshopfe.DTO.UserDTO;
 import com.group2.eshopfe.R;
+import com.group2.eshopfe.cart.activity.CartActivity;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.common.Utils;
 import com.group2.eshopfe.home.adapter.HomeProductAdapter;
 import com.group2.eshopfe.DTO.ProductDTO;
 import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
-import com.group2.eshopfe.login.activity.LoginActivity;
 import com.group2.eshopfe.payload.ResponseObject;
 import com.group2.eshopfe.user_infor.activity.UserInformation;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     HomeProductAdapter homeProductAdapter;
     List<ProductDTO> productDTOS = new ArrayList<>();
     ObjectMapper objectMapper = new ObjectMapper();
-    Button buttonHomeHome, buttonHomeCart, buttonHomeUser;
+    ImageButton imageButtonHomeHome, imageButtonHomeCart, imageButtonHomeUser;
 
     BottomNavigationView bottomNavigationView;
 
@@ -117,16 +110,23 @@ public class HomeActivity extends AppCompatActivity {
         textViewHomeName = findViewById(R.id.textViewHomeName);
         textViewHomeEmail = findViewById(R.id.textViewHomeEmail);
 
-        buttonHomeHome= findViewById(R.id.buttonHomeHome);
-        buttonHomeCart = findViewById(R.id.buttonHomeCart);
-        buttonHomeUser = findViewById(R.id.buttonHomeUser);
+        imageButtonHomeHome= findViewById(R.id.imageButtonCartHome);
+        imageButtonHomeCart = findViewById(R.id.imageButtonCartCart);
+        imageButtonHomeUser = findViewById(R.id.imageButtonCartUser);
     }
 
     public void addEvent() {
-        buttonHomeUser.setOnClickListener(new View.OnClickListener() {
+        imageButtonHomeUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, UserInformation.class);
+                Intent intent =new Intent(HomeActivity.this, UserInformation.class);
+                startActivity(intent);
+            }
+        });
+        imageButtonHomeCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(HomeActivity.this, CartActivity.class);
                 startActivity(intent);
             }
         });
