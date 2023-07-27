@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.group2.eshopfe.R;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.home.activity.HomeActivity;
+import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
 import com.group2.eshopfe.login.model.LoginRequest;
 import com.group2.eshopfe.login.service.ApiLoginService;
 import com.group2.eshopfe.login.service.LoginService;
@@ -31,6 +32,23 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+        ApiHomeServiceImpl.getInstances().setSharedPreferences(getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE));
+        ApiHomeServiceImpl.getInstances().getCurrentUserDTO().enqueue(new Callback<ResponseObject>() {
+            @Override
+            public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
+                if (response.errorBody() == null){
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseObject> call, Throwable t) {
+
+            }
+        });
         addControls();
         addEvents();
     }
