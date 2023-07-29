@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="listView" type="id">listViewListHome</item>
+    <item name="listViewContainer" type="id">listViewContainerHome</item>
+    <item name="imageViewListhome" type="id">list</item>
+    <item name="imageViewListHome" type="id">imageViewListHome</item>
+    <item name="listViewHomeAllProducts" type="id">listViewHomeAllProducts</item>
+</resources>

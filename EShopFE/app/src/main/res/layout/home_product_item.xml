@@ -15,6 +15,7 @@
             android:id="@+id/imageViewHomeProduct"
             android:layout_width="140dp"
             android:layout_height="140dp"
+            android:background="@drawable/rectangle_3"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout

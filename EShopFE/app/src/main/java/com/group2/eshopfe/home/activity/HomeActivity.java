@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         ApiHomeServiceImpl.getInstances().getCurrentUserDTO().enqueue(new Callback<ResponseObject>() {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
-                Log.i("getCurrentUserDTO", "success");
+                Log.i("getCurrentUserDTO", /"success");
             }
 
             @Override

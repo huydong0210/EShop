@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EShopFE</string>
+    <string name="no_internet">
+No internet Connection
+</string>
+    <string name="your_intern">
+Your internet connection is currently\nnot available please check or try again.
+</string>
 </resources>

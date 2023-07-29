@@ -20,14 +20,18 @@
 
     <EditText
         android:id="@+id/editTextSignUpUsername"
+        android:layout_marginTop="90dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/rectangle_5"
         android:hint="Tên đăng nhập"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/editTextSignUpPassword"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
+        android:background="@drawable/rectangle_5"
         android:hint="Password"
         android:layout_height="50dp"
         android:inputType="textPassword" />
@@ -35,7 +39,9 @@
     <EditText
         android:id="@+id/editTextSignUpEmail"
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="50dp"
+        android:background="@drawable/rectangle_5"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -43,6 +49,8 @@
         android:id="@+id/editTextSignUpPhone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_5"
         android:hint="Số điện thoại"
         android:inputType="number" />
 
@@ -50,8 +58,8 @@
         android:id="@+id/buttonSignUpSignUp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#0000FF"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/rectangle_4"
         android:text="Đăng kí"
         android:textColor="#fff" />
 
@@ -60,7 +68,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#0000FF"
+        android:background="@drawable/rectangle_4"
         android:text="Đăng nhập"
         android:textColor="#fff" />
 
