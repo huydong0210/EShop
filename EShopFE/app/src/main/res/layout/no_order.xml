@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewBackBtnStartOrdering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            tools:srcCompat="?attr/actionModeCloseDrawable" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:id="@+id/textViewStartOrdering"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="15dp"
+            android:text="Orders"
+            android:textSize="22dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_marginLeft="130dp"
+        android:layout_width="110dp"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/no_order" />
+
+    <TextView
+        android:id="@+id/no_orders_y"
+        android:layout_width="241dp"
+        android:layout_height="84dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/no_orders_y"
+        android:textAppearance="@style/no_orders_y" />
+
+    <TextView
+        android:id="@+id/hit_the_ora"
+        android:layout_width="263dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.57"
+        android:gravity="center_horizontal|top"
+        android:text="@string/hit_the_ora"
+        android:textAppearance="@style/hit_the_ora" />
+    <Button
+        android:id="@+id/BtnStartOrdering"
+        android:layout_width="314dp"
+        android:layout_height="57dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Start ordering"
+        android:background="@drawable/rectangle_4"
+        />
+</LinearLayout>

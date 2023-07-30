@@ -6,4 +6,17 @@ No internet Connection
     <string name="your_intern">
 Your internet connection is currently\nnot available please check or try again.
 </string>
+    <string name="try_searchi">
+Try searching the item with\na different keyword.
+</string>
+    <string name="item_not_fo">
+Item not found
+</string>
+    <string name="hit_the_ora">
+Hit the orange button down\nbelow to Create an order
+</string>
+    <string name="no_orders_y">
+No orders yet
+</string>
+
 </resources>

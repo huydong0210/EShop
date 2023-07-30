@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="_bg__my_profile_ek2_color">#F5F5F8</color>
+    <color name="payment_method_color">#000000</color>
+    <color name="rectangle_10_color">#FFFFFF</color>
+    <color name="rectangle_2_color">#0000FF</color>
+    <color name="updatet_color">#F6F6F9</color>
+    <color name="rectangle_6_color">#C4C4C4</color>
+    <color name="rectangle_12_color">#F47A0A</color>
+    <color name="ellipse_7_color">#ffffff</color>
 </resources>
