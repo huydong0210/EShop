@@ -92,20 +92,85 @@
 
     </LinearLayout>
 
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="55dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="60dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:background="@drawable/rectangle_7">-->
-<!--        <TextView-->
-<!--            android:id="@+id/textViewMyProfilePhone"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            android:text="0123456789" />-->
-<!--    </View>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/viewOrderMyProfile"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rectangle_7">
+        <TextView
+            android:id="@+id/textViewOrderMyProfile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="Orders"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/imageViewOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/next_btn" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewAddressMyProfile"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rectangle_7">
+        <TextView
+            android:id="@+id/textViewAdressMyProfile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/imageViewAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/next_btn" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewLogOutMyProfile"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rectangle_7">
+        <TextView
+            android:id="@+id/textViewLogOutMyProfile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:text="Log out"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/imageViewLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/next_btn" />
+
+    </LinearLayout>
 
 </LinearLayout>
