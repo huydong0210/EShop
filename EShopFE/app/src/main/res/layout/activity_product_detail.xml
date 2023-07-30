@@ -33,29 +33,14 @@
         android:layout_height="100dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageViewBackBtnSearchProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginLeft="20dp"
-            tools:srcCompat="?attr/actionModeCloseDrawable" />
-
         <TextView
             android:layout_width="290dp"
             android:layout_height="40dp"
             android:layout_marginTop="27dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="60dp"
             android:textSize="25dp"
             android:text="Chi tiết sản phẩm"
             android:textAlignment="center" />
-        <ImageView
-            android:id="@+id/imageViewCartSearchProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginLeft="20dp"
-            tools:srcCompat="@drawable/shoppingcart" />
 
     </LinearLayout>
     <LinearLayout
@@ -117,18 +102,18 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="405dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_marginLeft="10dp"
-            android:textColor="#0000FF"
-            android:layout_marginTop="7dp"
-            android:textSize="25sp"
-            android:text="Mô tả chi tiết sản phẩm"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:text="Mô tả chi tiết sản phẩm"
+            android:textColor="#0000FF"
+            android:textSize="25sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -143,6 +128,40 @@
                 android:paddingBottom="10dp"
                 android:textSize="18sp" />
         </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButtonHomeProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="Home"
+            app:srcCompat="@drawable/icon_home" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCartProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            android:contentDescription="Cart"
+            app:srcCompat="@drawable/icon_cart" />
+
+        <ImageButton
+            android:id="@+id/imageButtonUserProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="User"
+            app:srcCompat="@drawable/icon_user" />
+
     </LinearLayout>
 
 </LinearLayout>dget.ConstraintLayout>
