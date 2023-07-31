@@ -23,7 +23,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        imageButtonCartHome = findViewById(R.id.imageButtonCartHome);
+        imageButtonCartHome = findViewById(R.id.imageButtonHomeCart);
         imageButtonCartCart = findViewById(R.id.imageButtonCartCart);
         imageButtonCartUser = findViewById(R.id.imageButtonCartUser);
 

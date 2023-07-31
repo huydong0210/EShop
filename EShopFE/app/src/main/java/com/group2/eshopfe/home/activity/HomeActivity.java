@@ -10,17 +10,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.group2.eshopfe.DTO.UserDTO;
 import com.group2.eshopfe.R;
 import com.group2.eshopfe.cart.activity.CartActivity;
 import com.group2.eshopfe.common.Constant;
-import com.group2.eshopfe.common.Utils;
 import com.group2.eshopfe.home.adapter.HomeProductAdapter;
 import com.group2.eshopfe.DTO.ProductDTO;
 import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
@@ -35,16 +34,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageView imageViewHomeAvatar;
-    TextView textViewHomeName;
-    TextView textViewHomeEmail;
     ListView listViewHomeAllProducts;
     HomeProductAdapter homeProductAdapter;
     List<ProductDTO> productDTOS = new ArrayList<>();
     ObjectMapper objectMapper = new ObjectMapper();
     ImageButton imageButtonHomeHome, imageButtonHomeCart, imageButtonHomeUser;
 
-    BottomNavigationView bottomNavigationView;
+    SearchView searchViewHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +53,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
                 Log.i("getCurrentUserDTO", "success");
-                try {
-                    UserDTO userDTO = objectMapper.readValue(response.body().getData().toString(), UserDTO.class);
-                    imageViewHomeAvatar.setImageBitmap(Utils.convertBytesToBitMap(userDTO.getImage()));
-                    textViewHomeName.setText(userDTO.getUsername());
-                    textViewHomeEmail.setText(userDTO.getEmail());
-                } catch (JsonProcessingException e) {
-                    throw new RuntimeException(e);
-                }
 
             }
 
@@ -106,13 +94,11 @@ public class HomeActivity extends AppCompatActivity {
         homeProductAdapter = new HomeProductAdapter(HomeActivity.this, R.layout.home_product_item);
         listViewHomeAllProducts.setAdapter(homeProductAdapter);
 
-        imageViewHomeAvatar =findViewById(R.id.imageViewHomeAvatar);
-        textViewHomeName = findViewById(R.id.textViewHomeName);
-        textViewHomeEmail = findViewById(R.id.textViewHomeEmail);
+        imageButtonHomeHome= findViewById(R.id.imageButtonHomeHome);
+        imageButtonHomeCart = findViewById(R.id.imageButtonHomeCart);
+        imageButtonHomeUser = findViewById(R.id.imageButtonHomeUser);
 
-        imageButtonHomeHome= findViewById(R.id.imageButtonCartHome);
-        imageButtonHomeCart = findViewById(R.id.imageButtonCartCart);
-        imageButtonHomeUser = findViewById(R.id.imageButtonCartUser);
+        searchViewHome = findViewById(R.id.searchViewHome);
     }
 
     public void addEvent() {
@@ -130,5 +116,27 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        searchViewHome.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                System.out.println("sdfsdf");
+                homeProductAdapter.clear();
+                productDTOS.stream().forEach(productDTO -> {
+                    if (productDTO.getProductName().toLowerCase().contains(newText.toLowerCase())){
+                        homeProductAdapter.add(productDTO);
+                    }
+                });
+                return false;
+            }
+        });
     }
+    public void searchViewHandler(){
+
+    }
+
 }

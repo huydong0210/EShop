@@ -19,19 +19,23 @@ import com.group2.eshopfe.login.activity.LoginActivity;
 public class UserInformation extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ImageButton imageButtonUser, imageButtonHome, imageButtonCart, imageButtonLogout;
+    View viewUserLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_information);
+
         addControls();
         addEvents();
     }
     private void addControls(){
-        imageButtonHome = findViewById(R.id.imageButtonCartHome);
-        imageButtonUser = findViewById(R.id.imageButtonCartUser);
-        imageButtonCart = findViewById(R.id.imageButtonCartCart);
+        imageButtonHome = findViewById(R.id.imageButtonHomeUser);
+        imageButtonUser = findViewById(R.id.imageButtonUserUser);
+        imageButtonCart = findViewById(R.id.imageButtonUserCart);
 
-        imageButtonLogout = findViewById(R.id.imageButtonLogout);
+        viewUserLogout = findViewById(R.id.viewUserLogOut);
+
+//        imageButtonLogout = findViewById(R.id.imageButtonLogout);
     }
     private void addEvents(){
         imageButtonHome.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +52,8 @@ public class UserInformation extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        imageButtonLogout.setOnClickListener(new View.OnClickListener() {
+
+        viewUserLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE);
