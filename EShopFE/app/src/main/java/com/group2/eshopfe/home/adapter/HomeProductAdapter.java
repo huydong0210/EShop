@@ -37,19 +37,21 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
         ImageView imageViewHomeProduct= homeProductItemView.findViewById(R.id.imageViewHomeProduct);
         TextView textViewHomeProductPrice= homeProductItemView.findViewById(R.id.textViewHomeProductName);
         TextView textViewHomeProductProductName = homeProductItemView.findViewById(R.id.textViewHomeProductProductPrice);
-//        TextView textViewHomeProductDescription = homeProductItemView.findViewById(R.id.textViewHomeProductDescription);
-        Button buttonHomeProductAddToCart  = homeProductItemView.findViewById(R.id.buttonHomeProductAddToCart);
+        Button buttonHomeProductAddToCart = homeProductItemView.findViewById(R.id.buttonHomeProductAddToCart);
 
 
         ProductDTO sp = getItem(position);
-//        imageViewHomeProduct.setImageResource(sp.getImage());
         textViewHomeProductProductName.setText(sp.getProductName());
         textViewHomeProductPrice.setText(sp.getPrice() + "");
-    //    textViewHomeProductDescription.setText(sp.getDescription());
-//        byte[] data = Utils.decompressImage(sp.getImage());
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+
         imageViewHomeProduct.setImageBitmap(Utils.convertBytesToBitMap(sp.getImage()));
 
+        buttonHomeProductAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         return homeProductItemView;
     }

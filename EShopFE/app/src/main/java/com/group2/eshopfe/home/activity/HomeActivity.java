@@ -23,6 +23,7 @@ import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.home.adapter.HomeProductAdapter;
 import com.group2.eshopfe.DTO.ProductDTO;
 import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
+import com.group2.eshopfe.login.activity.LoginActivity;
 import com.group2.eshopfe.payload.ResponseObject;
 import com.group2.eshopfe.user_infor.activity.UserInformation;
 
@@ -53,6 +54,10 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
                 Log.i("getCurrentUserDTO", "success");
+                if (response.errorBody()!=null){
+                    Intent intent =new Intent(HomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
 
             }
 
