@@ -7,6 +7,7 @@ import lombok.ToString;
 import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
+
 @Getter
 @Setter
 @Entity
@@ -18,19 +19,20 @@ public class OrderDetails {
 
     @Column(name = "amount")
     private int amount;
+    @Column(name = "status")
+    private String status;
 
     @ManyToOne
-    @JoinColumn(name = "orders_id")
+    @JoinColumn(name = "user_id")
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private Order order;
+    private EUser user;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
-
-    public OrderDetails(){
+    public OrderDetails() {
 
     }
 }
