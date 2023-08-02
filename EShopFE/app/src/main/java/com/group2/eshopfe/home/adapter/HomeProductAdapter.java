@@ -1,8 +1,6 @@
 package com.group2.eshopfe.home.adapter;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +35,7 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
         ImageView imageViewHomeProduct= homeProductItemView.findViewById(R.id.imageViewHomeProduct);
         TextView textViewHomeProductPrice= homeProductItemView.findViewById(R.id.textViewHomeProductName);
         TextView textViewHomeProductProductName = homeProductItemView.findViewById(R.id.textViewHomeProductProductPrice);
-        Button buttonHomeProductAddToCart = homeProductItemView.findViewById(R.id.buttonHomeProductAddToCart);
+        Button buttonHomeProductAddToCart = homeProductItemView.findViewById(R.id.buttonCartOrderDetailsDeleteItem);
 
 
         ProductDTO sp = getItem(position);
