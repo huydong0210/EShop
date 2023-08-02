@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rectangle_7"
     android:orientation="vertical">
 
     <LinearLayout
@@ -55,13 +56,26 @@
                 android:textSize="20dp"
                 android:text="TextView" />
 
-            <Button
-                android:id="@+id/buttonCartOrderDetailsDeleteItem"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5px"
-                android:textSize="20dp"
-                android:text="Xoá khỏi giỏ hàng" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonCartOrderDetailsDeleteItem"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/rectangle_9"
+                    android:text="Xoá"/>
+
+                <Button
+                    android:id="@+id/buttonCartOrderDetailsOrderItem"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/rectangle_9"
+                    android:text="Đặt"/>
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

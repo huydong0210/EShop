@@ -74,6 +74,7 @@
                 android:id="@+id/editTextLoginUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@drawable/rectangle_5"
                 android:inputType="text"
                 android:hint="Username"/>
 
@@ -81,6 +82,8 @@
                 android:id="@+id/editTextLoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_5"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
@@ -98,7 +101,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
-                android:background="#0000FF"
+                android:background="@drawable/rectangle_6"
                 android:text="Đăng nhập"
                 android:textAllCaps="false"
                 android:textColor="#fff"
@@ -108,7 +111,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
-                android:background="#0000FF"
+                android:background="@drawable/rectangle_6"
                 android:text="Đăng kí"
                 android:textAllCaps="false"
                 android:textColor="#fff"
