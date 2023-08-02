@@ -68,4 +68,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
     public Call<ResponseObject> getAllProducts() {
         return apiHomeService.getAllProducts();
     }
+
+    @Override
+    public Call<ResponseObject> getAllOrderDetails() {
+        return apiHomeService.getAllOrderDetails();
+    }
 }

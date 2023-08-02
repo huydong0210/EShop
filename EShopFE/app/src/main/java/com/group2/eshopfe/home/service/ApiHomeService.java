@@ -25,5 +25,6 @@ public interface ApiHomeService {
     Call<ResponseObject> getCurrentUserDTO();
     @GET("/api/products")
     Call<ResponseObject> getAllProducts();
-
+    @GET("/api/order-details")
+    Call<ResponseObject> getAllOrderDetails();
 }
