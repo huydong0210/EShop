@@ -28,7 +28,7 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<ResponseObject> getAllProducts() throws JsonProcessingException {
         List<ProductDTO> productDTOList = new ArrayList<>();
-        List<Product> products = productRepository.findAll();
+        List<Product> products = productRepository.findAllProducts();
         products.stream().forEach(product -> {
             productDTOList.add(Mapper.buildProductDTO(product));
         });

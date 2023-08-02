@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface OrderDetailsRepository extends JpaRepository<OrderDetails, Long> {
-    @Query(value = "select * from OrderDetails  where orders_id = ?1",nativeQuery = true)
-    List<OrderDetails> findOrderDetailsByOderID(Long OrderID);
+    @Query(value = "delete from OrderDetails where product_id = ?1",nativeQuery = true)
+    void deleteOrderDetailsByProductId(Long productID);
 }

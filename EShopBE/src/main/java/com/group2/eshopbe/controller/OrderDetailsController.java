@@ -1,6 +1,7 @@
 package com.group2.eshopbe.controller;
 
 import com.group2.eshopbe.DTO.Mapper;
+import com.group2.eshopbe.DTO.OrderDetailsDTO;
 import com.group2.eshopbe.common.Constants;
 import com.group2.eshopbe.entity.EUser;
 import com.group2.eshopbe.entity.OrderDetails;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -26,11 +28,22 @@ public class OrderDetailsController {
     UserRepository userRepository;
     @Autowired
     ProductRepository productRepository;
+    @GetMapping
+    public ResponseEntity<ResponseObject> getAllOrderDetailsInCart(){
+        List<OrderDetails> orderDetailsList = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get()).get().getOrderDetailsList();
+        List<OrderDetailsDTO> orderDetailsDTOS = new ArrayList<>();
+        for (OrderDetails orderDetails : orderDetailsList){
+            if (orderDetails.getStatus().equals(Constants.IN_CART)) {
+                orderDetailsDTOS.add(Mapper.buildOrderDetailsDTO(orderDetails));
+            }
+        }
+        return ResponseEntity.ok(new ResponseObject(ResponseObject.SUCCESS, "", Mapper.convertObjectToJson(orderDetailsDTOS)));
+    }
+    @DeleteMapping("/{productID}")
+    public ResponseEntity<ResponseObject> deleteOrderDetailsInCartByProductID(@PathVariable Long productID){
+        orderDetailsRepository.deleteOrderDetailsByProductId(productID);
+        return null;
 
-    @GetMapping("/{orderID}")
-    public ResponseEntity<ResponseObject> getAllOrderDetailsByOrderId(@PathVariable Long orderID) {
-        List<OrderDetails> orderDetailsList = orderDetailsRepository.findOrderDetailsByOderID(orderID);
-        return ResponseEntity.ok(new ResponseObject(ResponseObject.SUCCESS, "", orderDetailsList));
     }
 
     @PostMapping("/products/{id}")
@@ -55,7 +68,6 @@ public class OrderDetailsController {
             result =orderDetailsRepository.save(orderDetails);
         }
         return ResponseEntity.ok(new ResponseObject(ResponseObject.SUCCESS, "", ""));
-
     }
 
 }
