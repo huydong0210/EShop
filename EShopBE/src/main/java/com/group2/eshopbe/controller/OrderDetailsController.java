@@ -41,7 +41,8 @@ public class OrderDetailsController {
     }
     @DeleteMapping("/{productID}")
     public ResponseEntity<ResponseObject> deleteOrderDetailsInCartByProductID(@PathVariable Long productID){
-        orderDetailsRepository.deleteOrderDetailsByProductId(productID);
+        EUser user = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get()).get();
+        orderDetailsRepository.deleteOrderDetailsByProductId(productID, user.getId());
         return null;
 
     }
