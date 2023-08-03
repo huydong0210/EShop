@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,27 +25,30 @@ public class CartOrderDetailsAdapter extends ArrayAdapter<OrderDetailsDTO> {
     public CartOrderDetailsAdapter(@NonNull Activity context, int resource) {
         super(context, resource);
         this.context = context;
-        this.resource=resource;
+        this.resource = resource;
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater layoutInflater = this.context.getLayoutInflater();
         View cartOrderDetailsItemView = layoutInflater.inflate(this.resource, null);
-        ImageView imageViewCartOrderDetailsImage =  cartOrderDetailsItemView.findViewById(R.id.imageViewCartOrderDetailsImage);
+        ImageView imageViewCartOrderDetailsImage = cartOrderDetailsItemView.findViewById(R.id.imageViewCartOrderDetailsImage);
         TextView textViewCartOrderDetailsPrice = cartOrderDetailsItemView.findViewById(R.id.textViewCartOrderDetailsPrice);
         TextView textViewCartOrderDetailsName = cartOrderDetailsItemView.findViewById(R.id.textViewCartOrdeDetailsName);
-        TextView textViewCartOrderDetailsTotalPrice = cartOrderDetailsItemView.findViewById(R.id.textViewCartOrderDetailsTotalPrice);
         TextView textViewCartOrderDetailsAmount = cartOrderDetailsItemView.findViewById(R.id.textViewCartOrderDetailsAmount);
 
-        OrderDetailsDTO orderDetailsDTO =getItem(position);
+        Button buttonCartOrderDetailsDeleteItem = cartOrderDetailsItemView.findViewById(R.id.buttonCartOrderDetailsDeleteItem);
+
+        OrderDetailsDTO orderDetailsDTO = getItem(position);
         imageViewCartOrderDetailsImage.setImageBitmap(Utils.convertBytesToBitMap(orderDetailsDTO.getProductDTO().getImage()));
         textViewCartOrderDetailsPrice.setText(Float.toString(orderDetailsDTO.getProductDTO().getPrice()));
-        textViewCartOrderDetailsName.setText(orderDetailsDTO.getProductDTO().getProductName());
-        textViewCartOrderDetailsAmount.setText("Số lượng: " +orderDetailsDTO.getAmount());
-        float totalPrice = orderDetailsDTO.getAmount() * orderDetailsDTO.getProductDTO().getPrice();
-        textViewCartOrderDetailsTotalPrice.setText(Float.toString(totalPrice));
+        textViewCartOrderDetailsName.setText(orderDetailsDTO.getProductDTO().getProductName().substring(0, 18) + "...");
+        textViewCartOrderDetailsAmount.setText("Số lượng: " + orderDetailsDTO.getAmount());
+
+
+
 
 
         return cartOrderDetailsItemView;

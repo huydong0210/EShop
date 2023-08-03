@@ -48,7 +48,8 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
 
 
         ProductDTO sp = getItem(position);
-        textViewHomeProductProductName.setText(sp.getProductName());
+        String productName = sp.getProductName().length() >20 ? sp.getProductName().substring(0,25) + "..." : sp.getProductName();
+        textViewHomeProductProductName.setText(productName);
         textViewHomeProductPrice.setText(sp.getPrice() + "");
 
         imageViewHomeProduct.setImageBitmap(Utils.convertBytesToBitMap(sp.getImage()));
