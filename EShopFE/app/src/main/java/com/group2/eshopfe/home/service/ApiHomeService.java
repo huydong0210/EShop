@@ -18,6 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiHomeService {
     public void setSharedPreferences(SharedPreferences sharedPreferences);
@@ -27,4 +28,6 @@ public interface ApiHomeService {
     Call<ResponseObject> getAllProducts();
     @GET("/api/order-details")
     Call<ResponseObject> getAllOrderDetails();
+    @POST("/api/order-details/products/{productID}")
+    Call<ResponseObject> addNewOrderDetailsInCart(@Path("productID") Long id);
 }

@@ -73,4 +73,10 @@ public class ApiHomeServiceImpl implements ApiHomeService {
     public Call<ResponseObject> getAllOrderDetails() {
         return apiHomeService.getAllOrderDetails();
     }
+
+    @Override
+    public Call<ResponseObject> addNewOrderDetailsInCart(Long id) {
+        return apiHomeService.addNewOrderDetailsInCart(id);
+    }
+
 }
