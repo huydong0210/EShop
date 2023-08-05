@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.group2.eshopfe.DTO.ShipmentDetailsDTO;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.home.service.ApiHomeService;
 import com.group2.eshopfe.payload.ResponseObject;
@@ -92,6 +93,11 @@ public class ApiHomeServiceImpl implements ApiHomeService {
     @Override
     public Call<ResponseObject> getAllShipmentDetails() {
         return apiHomeService.getAllShipmentDetails();
+    }
+
+    @Override
+    public Call<ResponseObject> addNewShipmentDetails(ShipmentDetailsDTO shipmentDetailsDTO) {
+        return apiHomeService.addNewShipmentDetails(shipmentDetailsDTO);
     }
 
 }

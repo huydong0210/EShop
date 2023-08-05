@@ -23,24 +23,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:hint="Tên người nhận"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/editTextNewShipmentDetailsPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:hint="Số điện thoại"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/editTextNewShipmentDetailsAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:hint="Địa chỉ"
+            android:inputType="text" />
 
     </LinearLayout>
 
