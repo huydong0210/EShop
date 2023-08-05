@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -54,8 +55,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
                 Log.i("getCurrentUserDTO", "success");
-                if (response.errorBody()!=null){
-                    Intent intent =new Intent(HomeActivity.this, LoginActivity.class);
+                if (response.errorBody() != null) {
+                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
 
@@ -70,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         ApiHomeServiceImpl.getInstances().getAllProducts().enqueue(new Callback<ResponseObject>() {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
-                Log.i("products",response.toString());
+                Log.i("products", response.toString());
                 try {
                     productDTOS = objectMapper.readValue(response.body().getData().toString(), new TypeReference<List<ProductDTO>>() {
                     });
@@ -81,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
                     homeProductAdapter.add(productDTO);
                 });
 
-                Log.i("products",productDTOS.toString());
+                Log.i("products", productDTOS.toString());
             }
 
             @Override
@@ -99,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         homeProductAdapter = new HomeProductAdapter(HomeActivity.this, R.layout.home_product_item);
         listViewHomeAllProducts.setAdapter(homeProductAdapter);
 
-        imageButtonHomeHome= findViewById(R.id.imageButtonHomeHome);
+        imageButtonHomeHome = findViewById(R.id.imageButtonHomeHome);
         imageButtonHomeCart = findViewById(R.id.imageButtonHomeCart);
         imageButtonHomeUser = findViewById(R.id.imageButtonHomeUser);
 
@@ -110,15 +111,25 @@ public class HomeActivity extends AppCompatActivity {
         imageButtonHomeUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(HomeActivity.this, UserInformation.class);
+                Intent intent = new Intent(HomeActivity.this, UserInformation.class);
                 startActivity(intent);
             }
         });
         imageButtonHomeCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(HomeActivity.this, CartActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
                 startActivity(intent);
+            }
+        });
+        listViewHomeAllProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(HomeActivity.this, ProductInformationActivity.class);
+                ProductDTO product = homeProductAdapter.getItem(position);
+                intent.putExtra("productID", product.getId());
+                startActivity(intent);
+
             }
         });
         searchViewHome.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -132,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
                 System.out.println("sdfsdf");
                 homeProductAdapter.clear();
                 productDTOS.stream().forEach(productDTO -> {
-                    if (productDTO.getProductName().toLowerCase().contains(newText.toLowerCase())){
+                    if (productDTO.getProductName().toLowerCase().contains(newText.toLowerCase())) {
                         homeProductAdapter.add(productDTO);
                     }
                 });
@@ -140,7 +151,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-    public void searchViewHandler(){
+
+    public void searchViewHandler() {
 
     }
 

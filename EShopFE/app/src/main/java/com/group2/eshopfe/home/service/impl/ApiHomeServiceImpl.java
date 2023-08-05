@@ -79,4 +79,14 @@ public class ApiHomeServiceImpl implements ApiHomeService {
         return apiHomeService.addNewOrderDetailsInCart(id);
     }
 
+    @Override
+    public Call<ResponseObject> deleteOrderDetails(Long id) {
+        return apiHomeService.deleteOrderDetails(id);
+    }
+
+    @Override
+    public Call<ResponseObject> getProductDTOByID(Long id) {
+        return apiHomeService.getProductDTOByID(id);
+    }
+
 }

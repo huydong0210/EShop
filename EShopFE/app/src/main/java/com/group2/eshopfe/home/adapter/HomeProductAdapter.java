@@ -2,6 +2,7 @@ package com.group2.eshopfe.home.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.group2.eshopfe.R;
 import com.group2.eshopfe.DTO.ProductDTO;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.common.Utils;
+import com.group2.eshopfe.home.activity.ProductInformationActivity;
 import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
 import com.group2.eshopfe.payload.ResponseObject;
 
@@ -44,7 +46,8 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
         ImageView imageViewHomeProduct= homeProductItemView.findViewById(R.id.imageViewHomeProduct);
         TextView textViewHomeProductPrice= homeProductItemView.findViewById(R.id.textViewHomeProductName);
         TextView textViewHomeProductProductName = homeProductItemView.findViewById(R.id.textViewHomeProductProductPrice);
-        Button buttonHomeProductAddToCart = homeProductItemView.findViewById(R.id.buttonCartOrderDetailsDeleteItem);
+        Button buttonHomeProductAddToCart = homeProductItemView.findViewById(R.id.buttonHomeProductAddToCart);
+        Button buttonHomeProductProductInformation = homeProductItemView.findViewById(R.id.buttonHomeProductProductInfor);
 
 
         ProductDTO sp = getItem(position);
@@ -58,6 +61,15 @@ public class HomeProductAdapter extends ArrayAdapter<ProductDTO> {
             @Override
             public void onClick(View v) {
                 addNewOrderDetailsInCartButtonHandler(sp.getId());
+            }
+        });
+
+        buttonHomeProductProductInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductInformationActivity.class);
+                intent.putExtra("productID", sp.getId());
+                context.startActivity(intent);
             }
         });
 

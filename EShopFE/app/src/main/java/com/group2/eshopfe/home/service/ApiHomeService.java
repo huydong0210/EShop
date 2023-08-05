@@ -16,6 +16,7 @@ import okhttp3.Response;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -30,4 +31,9 @@ public interface ApiHomeService {
     Call<ResponseObject> getAllOrderDetails();
     @POST("/api/order-details/products/{productID}")
     Call<ResponseObject> addNewOrderDetailsInCart(@Path("productID") Long id);
+    @DELETE("/api/order-details/{productID}")
+    Call<ResponseObject> deleteOrderDetails(@Path("productID") Long id);
+    @GET("api/products/{productID}")
+    Call<ResponseObject> getProductDTOByID(@Path("productID") Long id);
+
 }

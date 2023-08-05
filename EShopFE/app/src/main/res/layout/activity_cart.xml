@@ -7,10 +7,17 @@
     android:orientation="vertical"
     tools:context=".cart.activity.CartActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Các sản phẩm trong giỏ hàng"
+        android:textSize="20dp" />
+
     <ListView
         android:id="@+id/listViewCartOrderDetails"
         android:layout_width="match_parent"
-        android:layout_height="682dp" />
+        android:layout_height="658dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
