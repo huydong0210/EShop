@@ -67,6 +67,7 @@ public class ShipmentDetailsActivity extends AppCompatActivity {
     }
     public void addControls(){
         buttonShipmentDetailsBack = findViewById(R.id.buttonShipmentDetailsBack);
+        buttonShipmentDetailsAdd = findViewById(R.id.buttonShipmentDetailsAdd);
 
         listViewShipmentDetailsList = findViewById(R.id.listViewShipmentDetailsList);
         shipmentDetailsAdapter = new ShipmentDetailsAdapter(ShipmentDetailsActivity.this, R.layout.activity_shipment_details_item);
@@ -79,6 +80,13 @@ public class ShipmentDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ShipmentDetailsActivity.this, UserInformation.class);
+                startActivity(intent);
+            }
+        });
+        buttonShipmentDetailsAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(ShipmentDetailsActivity.this, NewShipmentDetailsActivity.class);
                 startActivity(intent);
             }
         });
