@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.group2.eshopfe.R;
@@ -26,7 +28,8 @@ import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity {
     EditText editTextUsername, editTextPassword, editTextEmail, editTextPhone;
-    Button btnSignUp, btnLogin;
+    RelativeLayout btnSignUp;
+    TextView  btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
