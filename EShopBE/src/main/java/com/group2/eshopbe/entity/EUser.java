@@ -28,6 +28,9 @@ public class EUser {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "address")
+    private String address;
+
     @ManyToMany
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -41,6 +44,7 @@ public class EUser {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "image_id", referencedColumnName = "id")
     private Image image;
+
 
 
     public EUser() {

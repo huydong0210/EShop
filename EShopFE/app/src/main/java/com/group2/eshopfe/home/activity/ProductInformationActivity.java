@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.group2.eshopfe.DTO.Mapper;
@@ -29,14 +30,14 @@ public class ProductInformationActivity extends AppCompatActivity {
     ImageView imageViewProductInformationImage;
     TextView textViewProductInformationName, textViewProductInformationPrice, textViewProductInformationQuantity, textViewProductInformationDescription;
     Button buttonProductInformationAddToCart, buttonProductInformationHome;
-    ProductDTO productDTO;
+    Long productId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_information);
         Intent intent =getIntent();
-        Long productId = intent.getLongExtra("productID",0);
+        productId = intent.getLongExtra("productID",0);
         ApiHomeServiceImpl.getInstances().setSharedPreferences(getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE));
         ApiHomeServiceImpl.getInstances().getProductDTOByID(productId).enqueue(new Callback<ResponseObject>() {
             @Override
@@ -87,6 +88,35 @@ public class ProductInformationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        buttonProductInformationAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewOrderDetailsInCartButtonHandler(productId);
 
+            }
+        });
+
+    }
+    public void addNewOrderDetailsInCartButtonHandler(Long id){
+        ApiHomeServiceImpl.getInstances().setSharedPreferences(getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE));
+        ApiHomeServiceImpl.getInstances().addNewOrderDetailsInCart(id).enqueue(new Callback<ResponseObject>() {
+            @Override
+            public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
+                if (response.errorBody() ==null) {
+                    toast("Thêm sản phẩm vào giỏ hàng thành công");
+                } else {
+                    toast("Thêm sản phẩm vào giỏ hàng thất bại ");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseObject> call, Throwable t) {
+
+            }
+        });
+
+    }
+    public void toast(String message){
+        Toast.makeText(ProductInformationActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }

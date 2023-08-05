@@ -140,7 +140,6 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                System.out.println("sdfsdf");
                 homeProductAdapter.clear();
                 productDTOS.stream().forEach(productDTO -> {
                     if (productDTO.getProductName().toLowerCase().contains(newText.toLowerCase())) {
@@ -152,8 +151,5 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void searchViewHandler() {
-
-    }
 
 }
