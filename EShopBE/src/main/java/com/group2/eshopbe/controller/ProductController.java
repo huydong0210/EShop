@@ -34,13 +34,15 @@ public class ProductController {
         });
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseObject(ResponseObject.SUCCESS, "", Mapper.convertObjectToJson(productDTOList)));
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<ResponseObject> getProductById(@PathVariable Long id){
-        Optional<Product> product = productRepository.findById(id);
-        if (product.isPresent()){
-            return ResponseEntity.ok(new ResponseObject(ResponseObject.SUCCESS, "", product));
-        } else {
-            return ResponseEntity.ok(new ResponseObject(ResponseObject.FAIL, "id was not existed", product));
-        }
+    @GetMapping("/{productID}")
+    public ResponseEntity<ResponseObject> getProductDTOByID(@PathVariable Long productID){
+        Product product = productRepository.findById(productID).get();
+        return ResponseEntity.ok(new ResponseObject(
+                ResponseObject.SUCCESS,
+                "",
+                Mapper.convertObjectToJson(Mapper.buildProductDTO(product))
+        ));
+
+
     }
 }
