@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.group2.eshopbe.entity.EUser;
 import com.group2.eshopbe.entity.OrderDetails;
 import com.group2.eshopbe.entity.Product;
+import com.group2.eshopbe.entity.ShipmentDetails;
 
 import java.util.Stack;
 
@@ -25,6 +26,10 @@ public class Mapper {
 
     public static OrderDetailsDTO buildOrderDetailsDTO(OrderDetails orderDetails) {
         return new OrderDetailsDTO(orderDetails.getId(), orderDetails.getAmount(), orderDetails.getStatus(), buildUserDTO(orderDetails.getUser()), buildProductDTO(orderDetails.getProduct()));
+    }
+
+    public static ShipmentDetailsDTO buildShipmentDetailsDTO(ShipmentDetails shipmentDetails) {
+        return new ShipmentDetailsDTO(shipmentDetails.getId(), shipmentDetails.getAddress(), shipmentDetails.getPhone(), shipmentDetails.getFullName());
     }
 
     public static String convertObjectToJson(Object object) {

@@ -32,6 +32,11 @@ public class OrderDetails {
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "shipment_details_id", referencedColumnName = "id")
+    private ShipmentDetails shipmentDetails;
+
+
     public OrderDetails() {
 
     }
