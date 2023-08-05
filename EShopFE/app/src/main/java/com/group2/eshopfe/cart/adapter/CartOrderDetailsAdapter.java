@@ -3,7 +3,6 @@ package com.group2.eshopfe.cart.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import androidx.annotation.Nullable;
 
 import com.group2.eshopfe.DTO.OrderDetailsDTO;
 import com.group2.eshopfe.R;
-import com.group2.eshopfe.cart.activity.CartActivity;
 import com.group2.eshopfe.cart.activity.OrderActivity;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.common.Utils;
@@ -102,6 +100,4 @@ public class CartOrderDetailsAdapter extends ArrayAdapter<OrderDetailsDTO> {
     public void toast(String message){
         Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show();
     }
-
-
 }

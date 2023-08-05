@@ -49,5 +49,7 @@ public interface ApiHomeService {
 
     @POST("/api/shipment-details")
     Call<ResponseObject> addNewShipmentDetails(@Body ShipmentDetailsDTO shipmentDetailsDTO);
+    @GET("/api/order-details/{id}")
+    Call<ResponseObject> getOrderDetailsByID(@Path("id") Long id);
 
 }

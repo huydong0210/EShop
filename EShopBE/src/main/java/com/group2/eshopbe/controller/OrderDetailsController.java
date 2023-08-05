@@ -70,5 +70,15 @@ public class OrderDetailsController {
         }
         return ResponseEntity.ok(new ResponseObject(ResponseObject.SUCCESS, "", ""));
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<ResponseObject> getOrderDetailsByID(@PathVariable Long id){
+        OrderDetails orderDetails = orderDetailsRepository.findById(id).get();
 
+        return ResponseEntity.ok(new ResponseObject(
+                ResponseObject.SUCCESS,
+                "" ,
+                Mapper.convertObjectToJson(Mapper.buildOrderDetailsDTO(orderDetails))
+        ));
+
+    }
 }

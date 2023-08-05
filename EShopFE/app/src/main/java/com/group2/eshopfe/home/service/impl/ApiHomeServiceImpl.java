@@ -100,4 +100,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
         return apiHomeService.addNewShipmentDetails(shipmentDetailsDTO);
     }
 
+    @Override
+    public Call<ResponseObject> getOrderDetailsByID(Long id) {
+        return apiHomeService.getOrderDetailsByID(id);
+    }
+
 }
