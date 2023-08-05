@@ -89,4 +89,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
         return apiHomeService.getProductDTOByID(id);
     }
 
+    @Override
+    public Call<ResponseObject> getAllShipmentDetails() {
+        return apiHomeService.getAllShipmentDetails();
+    }
+
 }

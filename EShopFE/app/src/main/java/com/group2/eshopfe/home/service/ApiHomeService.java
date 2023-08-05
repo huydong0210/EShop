@@ -35,5 +35,7 @@ public interface ApiHomeService {
     Call<ResponseObject> deleteOrderDetails(@Path("productID") Long id);
     @GET("api/products/{productID}")
     Call<ResponseObject> getProductDTOByID(@Path("productID") Long id);
+    @GET("/api/shipment-details")
+    Call<ResponseObject> getAllShipmentDetails();
 
 }

@@ -33,7 +33,7 @@ public class UserInformation extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ImageButton imageButtonUser, imageButtonHome, imageButtonCart, imageButtonLogout;
     TextView textViewUserName, textViewUserEmail, textViewUserPhone;
-    View viewUserLogout;
+    View viewUserLogout, viewShipmentDetails;
     ImageView imageViewUserAvatar;
 
     @Override
@@ -94,6 +94,7 @@ public class UserInformation extends AppCompatActivity {
         imageButtonCart = findViewById(R.id.imageButtonUserCart);
 
         viewUserLogout = findViewById(R.id.viewUserLogOut);
+        viewShipmentDetails = findViewById(R.id.viewShipmentDetails);
 
         textViewUserName = findViewById(R.id.textViewUserName);
         textViewUserEmail = findViewById(R.id.textViewUserEmail);
@@ -126,6 +127,13 @@ public class UserInformation extends AppCompatActivity {
                 editor.remove("authToken");
                 editor.apply();
                 Intent intent = new Intent(UserInformation.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        viewShipmentDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(UserInformation.this, ShipmentDetailsActivity.class);
                 startActivity(intent);
             }
         });
