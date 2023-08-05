@@ -27,7 +27,7 @@
                 android:id="@+id/sign_up_ek3"
                 android:textStyle="bold"
                 android:textSize="36sp"
-                android:textColor="@color/sign_up_ek3_color"
+                android:textColor="#0000FF"
                 android:layout_marginLeft="59dp"
                 android:layout_marginTop="94dp"
                 android:layout_width="245dp"
@@ -170,11 +170,11 @@
                 android:id="@+id/buttonSignUpLogin"
                 android:textStyle="bold"
                 android:textSize="13sp"
-                android:textColor="@color/sign_up_ek3_color"
                 android:layout_marginLeft="127dp"
                 android:layout_marginTop="634dp"
                 android:layout_width="178.5dp"
                 android:layout_height="24.5dp"
+                android:textColor="#0000FF"
                 android:text="@string/already_a_member__log_in_string" />
 
             <RelativeLayout

@@ -11,13 +11,18 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Các sản phẩm trong giỏ hàng"
-        android:textSize="20dp" />
+        android:text="Giỏ hàng"
+        android:textSize="25dp"
+        android:textColor="#0000FF"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/listViewCartOrderDetails"
         android:layout_width="match_parent"
-        android:layout_height="658dp" />
+        android:layout_height="609dp"
+        android:layout_marginTop="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
