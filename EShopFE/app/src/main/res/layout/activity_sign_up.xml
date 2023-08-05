@@ -49,15 +49,15 @@
                     android:layout_width="321dp"
                     android:layout_height="47dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextSignUpUsername"
-                    android:textSize="14sp"
-                    android:textColor="@color/full_name_color"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="23.54dp"
-                    android:layout_marginTop="15.98dp"
-                    android:layout_width="81dp"
-                    android:layout_height="28dp"
-                    android:text="@string/full_name_string" />
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/full_name_string"
+                    android:textColor="@color/full_name_color"
+                    android:textSize="14sp" />
 
                 <RelativeLayout
                     android:layout_width="22dp"
@@ -82,15 +82,15 @@
                     android:layout_width="321dp"
                     android:layout_height="47dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextSignUpEmail"
-                    android:textSize="14sp"
-                    android:textColor="@color/full_name_color"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="23.54dp"
-                    android:layout_marginTop="15.98dp"
-                    android:layout_width="81dp"
-                    android:layout_height="28dp"
-                    android:text="@string/valid_email_string" />
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/valid_email_string"
+                    android:textColor="@color/full_name_color"
+                    android:textSize="14sp" />
 
                 <RelativeLayout
                     android:id="@+id/user"
@@ -116,13 +116,13 @@
                     android:layout_width="321dp"
                     android:layout_height="47dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextSignUpPhone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_width="220dp"
                     android:layout_marginLeft="23.54dp"
-                    android:layout_marginTop="15.98dp"
-                    android:text="@string/phone_number_string"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/phone_number_string"
                     android:textColor="@color/full_name_color"
                     android:textSize="14sp" />
 
@@ -148,13 +148,13 @@
                     android:layout_width="321dp"
                     android:layout_height="47dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextSignUpPassword"
-                    android:layout_width="122dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_width="220dp"
                     android:layout_marginLeft="23.54dp"
-                    android:layout_marginTop="15.98dp"
-                    android:text="@string/strong_password_string"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/strong_password_string"
                     android:textColor="@color/full_name_color"
                     android:textSize="14sp" />
 
