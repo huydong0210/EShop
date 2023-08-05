@@ -35,7 +35,6 @@
                 android:text="@string/sign_up_ek3_string" />
 
             <RelativeLayout
-                android:id="@+id/editTextSignUpUsername"
                 android:layout_marginTop="220dp"
                 android:layout_marginStart="50dp"
                 android:layout_width="wrap_content"
@@ -51,7 +50,7 @@
                     android:layout_height="47dp" />
 
                 <TextView
-                    android:id="@+id/full_name"
+                    android:id="@+id/editTextSignUpUsername"
                     android:textSize="14sp"
                     android:textColor="@color/full_name_color"
                     android:layout_marginLeft="23.54dp"
@@ -70,7 +69,6 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/editTextSignUpEmail"
                 android:layout_marginTop="280dp"
                 android:layout_marginStart="50dp"
                 android:layout_width="wrap_content"
@@ -85,7 +83,7 @@
                     android:layout_height="47dp" />
 
                 <TextView
-                    android:id="@+id/valid_email"
+                    android:id="@+id/editTextSignUpEmail"
                     android:textSize="14sp"
                     android:textColor="@color/full_name_color"
                     android:layout_marginLeft="23.54dp"
@@ -105,7 +103,6 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/editTextSignUpPhone"
                 android:layout_marginTop="345dp"
                 android:layout_marginStart="50dp"
                 android:layout_width="wrap_content"
@@ -120,7 +117,7 @@
                     android:layout_height="47dp" />
 
                 <TextView
-                    android:id="@+id/phone_number"
+                    android:id="@+id/editTextSignUpPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23.54dp"
@@ -138,7 +135,6 @@
                 </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/editTextSignUpPassword"
                 android:layout_marginTop="410dp"
                 android:layout_marginStart="50dp"
                 android:layout_width="wrap_content"
@@ -153,7 +149,7 @@
                     android:layout_height="47dp" />
 
                 <TextView
-                    android:id="@+id/strong_password"
+                    android:id="@+id/editTextSignUpPassword"
                     android:layout_width="122dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23.54dp"
