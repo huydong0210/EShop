@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import com.group2.eshopfe.DTO.OrderDetailsDTO;
 import com.group2.eshopfe.R;
 import com.group2.eshopfe.cart.activity.CartActivity;
+import com.group2.eshopfe.cart.activity.OrderActivity;
 import com.group2.eshopfe.common.Constant;
 import com.group2.eshopfe.common.Utils;
 import com.group2.eshopfe.home.service.impl.ApiHomeServiceImpl;
@@ -51,6 +52,7 @@ public class CartOrderDetailsAdapter extends ArrayAdapter<OrderDetailsDTO> {
         TextView textViewCartOrderDetailsAmount = cartOrderDetailsItemView.findViewById(R.id.textViewCartOrderDetailsAmount);
 
         Button buttonCartOrderDetailsDeleteItem = cartOrderDetailsItemView.findViewById(R.id.buttonCartOrderDetailsDeleteItem);
+        Button buttonCartOrderDetailsOrder = cartOrderDetailsItemView.findViewById(R.id.buttonCartOrderDetailsOrder);
 
         OrderDetailsDTO orderDetailsDTO = getItem(position);
         imageViewCartOrderDetailsImage.setImageBitmap(Utils.convertBytesToBitMap(orderDetailsDTO.getProductDTO().getImage()));
@@ -62,6 +64,14 @@ public class CartOrderDetailsAdapter extends ArrayAdapter<OrderDetailsDTO> {
             @Override
             public void onClick(View v) {
                 buttonCartOrderDetailsDeleteItemHandler(orderDetailsDTO);
+            }
+        });
+        buttonCartOrderDetailsOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, OrderActivity.class);
+                intent.putExtra("orderDetailsID", orderDetailsDTO.getId());
+                context.startActivity(intent);
             }
         });
 
