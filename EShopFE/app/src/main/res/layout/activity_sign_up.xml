@@ -92,7 +92,7 @@
                     android:layout_marginTop="15.98dp"
                     android:layout_width="81dp"
                     android:layout_height="28dp"
-                    android:text="@string/full_name_string" />
+                    android:text="@string/valid_email_string" />
 
                 <RelativeLayout
                     android:id="@+id/user"
@@ -121,13 +121,13 @@
 
                 <TextView
                     android:id="@+id/phone_number"
-                    android:textSize="14sp"
-                    android:textColor="@color/full_name_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="23.54dp"
                     android:layout_marginTop="15.98dp"
-                    android:layout_width="81dp"
-                    android:layout_height="28dp"
-                    android:text="@string/full_name_string" />
+                    android:text="@string/phone_number_string"
+                    android:textColor="@color/full_name_color"
+                    android:textSize="14sp" />
 
                 <RelativeLayout
                     android:layout_width="22dp"
@@ -154,13 +154,13 @@
 
                 <TextView
                     android:id="@+id/strong_password"
-                    android:textSize="14sp"
-                    android:textColor="@color/full_name_color"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="23.54dp"
                     android:layout_marginTop="15.98dp"
-                    android:layout_width="81dp"
-                    android:layout_height="28dp"
-                    android:text="@string/full_name_string" />
+                    android:text="@string/strong_password_string"
+                    android:textColor="@color/full_name_color"
+                    android:textSize="14sp" />
 
                 <RelativeLayout
                     android:layout_width="22dp"
