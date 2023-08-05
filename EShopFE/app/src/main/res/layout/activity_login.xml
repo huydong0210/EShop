@@ -38,73 +38,72 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="30dp">
-
-
-            <!--        <android.support.design.widget.TextInputLayout-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content">-->
-
-            <!--            <EditText-->
-            <!--                android:id="@+id/txtEmail"-->
-            <!--                android:layout_width="fill_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:drawableTint="#FF4081"-->
-            <!--                android:hint="Email"-->
-            <!--                android:inputType="textEmailAddress"-->
-            <!--                android:singleLine="true" />-->
-            <!--        </android.support.design.widget.TextInputLayout>-->
-
-
-            <!--        <android.support.design.widget.TextInputLayout-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content">-->
-
-            <!--            <EditText-->
-            <!--                android:id="@+id/txtPass"-->
-            <!--                android:layout_width="fill_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="16dp"-->
-            <!--                android:drawableTint="#FF4081"-->
-            <!--                android:hint="Mật khẩu"-->
-            <!--                android:inputType="textPassword"-->
-            <!--                android:singleLine="true" />-->
-            <!--        </android.support.design.widget.TextInputLayout>-->
-
             <EditText
                 android:id="@+id/editTextLoginUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
+                android:background="@drawable/rectangle_7"
                 android:hint="Username"/>
 
             <EditText
                 android:id="@+id/editTextLoginPassword"
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_7"
                 android:layout_height="50dp"
                 android:hint="Password"
                 android:inputType="textPassword" />
+            <RelativeLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content">
 
+                <View
+                    android:id="@+id/buttonLoginLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rectangle_5_ek4_shape"
+                    android:layout_weight="1"
+                    android:textSize="12dp" />
 
-            <Button
-                android:id="@+id/buttonLoginLogin"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="#0000FF"
-                android:text="Đăng nhập"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-            <Button
-                android:id="@+id/buttonLoginSignUp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="#0000FF"
-                android:text="Đăng kí"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/next"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/next_color"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:textAlignment="center"
+                    android:text="Đăng nhập" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/buttonSignUpSignUp"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/buttonLoginSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rectangle_5_ek4_shape"
+                    android:layout_weight="1"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="38dp"
+                    android:text="Đăng ký"
+                    android:textAlignment="center"
+                    android:textColor="@color/next_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

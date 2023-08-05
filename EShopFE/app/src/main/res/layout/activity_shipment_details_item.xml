@@ -10,6 +10,7 @@
         android:id="@+id/textViewShipmentDetailsItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="TextView" />
 
     <TextView
@@ -24,10 +25,31 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
-    <Button
-        android:id="@+id/buttonShipmentDetailsItemDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_6"
-        android:text="Button" />
+    <RelativeLayout
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/buttonCartOrderDetailsDeleteItem"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_background"
+            android:layout_weight="1"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/next"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/next_color"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Thêm" />
+    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

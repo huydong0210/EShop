@@ -52,22 +52,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonCartOrderDetailsDeleteItem"
+                <RelativeLayout
+                    android:layout_marginStart="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Xoá khỏi giỏ hàng"
-                    android:layout_weight="1"
-                    android:textSize="12dp" />
+                    android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/buttonCartOrderDetailsOrder"
+                    <View
+                        android:id="@+id/buttonCartOrderDetailsDeleteItem"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_background"
+                        android:layout_weight="1"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/next"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/next_color"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="37dp"
+                        android:text="Xóa" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/buttonSignUpSignUp"
+                    android:layout_marginStart="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Đặt hàng"
-                    android:layout_weight="1"
-                    android:textSize="12dp" />
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/buttonCartOrderDetailsOrderItem"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_background"
+                        android:layout_weight="1"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/next_color"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:textAlignment="center"
+                        android:text="Đặt hàng" />
+                </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>
