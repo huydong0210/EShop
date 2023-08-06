@@ -30,7 +30,9 @@ public class Mapper {
     }
 
     public static ShipmentDetailsDTO buildShipmentDetailsDTO(ShipmentDetails shipmentDetails) {
-        return new ShipmentDetailsDTO(shipmentDetails.getId(), shipmentDetails.getAddress(), shipmentDetails.getPhone(), shipmentDetails.getFullName());
+
+        return shipmentDetails == null ? null
+                : new ShipmentDetailsDTO(shipmentDetails.getId(), shipmentDetails.getAddress(), shipmentDetails.getPhone(), shipmentDetails.getFullName());
     }
 
     public static String convertObjectToJson(Object object) {
