@@ -6,16 +6,18 @@ public class OrderDetailsDTO {
     private String status;
     private UserDTO userDTO;
     private ProductDTO productDTO;
+    private ShipmentDetailsDTO shipmentDetailsDTO;
 
     public OrderDetailsDTO() {
     }
 
-    public OrderDetailsDTO(Long id, int amount, String status, UserDTO userDTO, ProductDTO productDTO) {
+    public OrderDetailsDTO(Long id, int amount, String status, UserDTO userDTO, ProductDTO productDTO, ShipmentDetailsDTO shipmentDetailsDTO) {
         this.id = id;
         this.amount = amount;
         this.status = status;
         this.userDTO = userDTO;
         this.productDTO = productDTO;
+        this.shipmentDetailsDTO =shipmentDetailsDTO;
     }
 
     public Long getId() {
@@ -56,5 +58,13 @@ public class OrderDetailsDTO {
 
     public void setProductDTO(ProductDTO productDTO) {
         this.productDTO = productDTO;
+    }
+
+    public ShipmentDetailsDTO getShipmentDetailsDTO() {
+        return shipmentDetailsDTO;
+    }
+
+    public void setShipmentDetailsDTO(ShipmentDetailsDTO shipmentDetailsDTO) {
+        this.shipmentDetailsDTO = shipmentDetailsDTO;
     }
 }

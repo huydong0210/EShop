@@ -25,7 +25,8 @@ public class Mapper {
     }
 
     public static OrderDetailsDTO buildOrderDetailsDTO(OrderDetails orderDetails) {
-        return new OrderDetailsDTO(orderDetails.getId(), orderDetails.getAmount(), orderDetails.getStatus(), buildUserDTO(orderDetails.getUser()), buildProductDTO(orderDetails.getProduct()));
+        return new OrderDetailsDTO(orderDetails.getId(), orderDetails.getAmount(), orderDetails.getStatus(), buildUserDTO(orderDetails.getUser())
+                , buildProductDTO(orderDetails.getProduct()), buildShipmentDetailsDTO(orderDetails.getShipmentDetails()));
     }
 
     public static ShipmentDetailsDTO buildShipmentDetailsDTO(ShipmentDetails shipmentDetails) {
