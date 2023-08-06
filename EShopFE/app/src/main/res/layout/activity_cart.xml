@@ -32,7 +32,7 @@
         <ImageButton
             android:id="@+id/imageButtonHomeCart"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@color/white"
             android:contentDescription="Home"
@@ -41,7 +41,7 @@
         <ImageButton
             android:id="@+id/imageButtonCartCart"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@color/white"
             android:contentDescription="Cart"
@@ -50,7 +50,7 @@
         <ImageButton
             android:id="@+id/imageButtonCartUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@color/white"
             android:contentDescription="User"

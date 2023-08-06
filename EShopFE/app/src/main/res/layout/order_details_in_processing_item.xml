@@ -3,41 +3,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/rectangle_5_ek3_shape"
     android:layout_height="match_parent" >
 
     <ImageView
         android:id="@+id/imageViewOrderDetailsInProcessingImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewOrderDetailsInProcessingProductName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textViewOrderDetailsInProcessingTotalPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textViewOrderDetailsInProcessingStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
             android:text="TextView" />
+        <RelativeLayout
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/buttonOrderDetailsInProcessingDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chi  tiết" />
+            <View
+                android:id="@+id/buttonOrderDetailsInProcessingDetails"
+                android:layout_width="260dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/next"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/next_color"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Chi tiết" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

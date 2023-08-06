@@ -16,6 +16,8 @@
             android:id="@+id/imageViewHomeProduct"
             android:layout_width="140dp"
             android:layout_height="140dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -27,15 +29,17 @@
 
             <TextView
                 android:id="@+id/textViewHomeProductName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="260dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="5dp"
                 android:text="TextView"
                 android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/textViewHomeProductProductPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="260dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
                 android:text="TextView"
                 android:textSize="20dp" />
 

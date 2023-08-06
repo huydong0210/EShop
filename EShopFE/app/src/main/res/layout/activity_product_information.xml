@@ -16,7 +16,9 @@
 
     <TextView
         android:id="@+id/textViewProductInforName"
-        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="390dp"
         android:layout_height="38dp"
         android:textSize="22dp"
         android:textAlignment="center"
@@ -24,29 +26,36 @@
 
     <TextView
         android:id="@+id/textViewProductInforPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#0000ff"
+        android:layout_width="390dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="33dp"
+        android:text="TextView"
         android:textAlignment="center"
-        android:text="TextView" />
+        android:textColor="#0000ff" />
 
     <TextView
         android:id="@+id/textViewProductInforQuantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="TextView" />
+        android:layout_width="390dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/textViewProductInforDescription"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="390dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="230dp"
         android:text="TextView" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
         <RelativeLayout
             android:layout_marginStart="5dp"
@@ -63,14 +72,14 @@
 
             <TextView
                 android:id="@+id/next"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/next_color"
-                android:layout_marginTop="5dp"
                 android:layout_width="150dp"
                 android:layout_height="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Trang chủ"
                 android:textAlignment="center"
-                android:text="Trang chủ" />
+                android:textColor="@color/next_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/buttonSignUpSignUp"

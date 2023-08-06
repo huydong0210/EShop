@@ -198,7 +198,7 @@
                     android:textSize="20sp"
                     android:textColor="@color/next_color"
                     android:layout_marginLeft="130dp"
-                    android:layout_marginTop="12.88dp"
+                    android:layout_marginTop="10dp"
                     android:layout_width="70.76dp"
                     android:layout_height="37dp"
                     android:text="@string/next_string" />

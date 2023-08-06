@@ -3,50 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rectangle_5_ek3_shape"
     android:orientation="vertical" >
 
     <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewOrderShipmentDetailsItemName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="260dp"
+                android:layout_height="30dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/textViewOrderShipmentDetailsItemPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="260dp"
+                android:layout_height="30dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/textViewOrderShipmentDetailsItemAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="260dp"
+                android:layout_height="30dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/textViewOrderShipmentDetailsItemIsUse"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:text="TextView" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonOrderShipmentDetailsItemSelect"
+        <RelativeLayout
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Chọn" />
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/buttonOrderShipmentDetailsItemSelect"
+                android:layout_width="260dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/next"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/next_color"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Chọn" />
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>
