@@ -43,32 +43,15 @@
         android:layout_height="wrap_content"
         android:text="Địa chỉ giao hàng" />
 
-    <TextView
-        android:id="@+id/textViewOrderName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textViewOrderPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textViewOrderAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
     <ListView
+        android:id="@+id/listViewOrderShipmentDetails"
         android:layout_width="match_parent"
-        android:layout_height="510dp">
+        android:layout_height="570dp">
 
     </ListView>
 
     <LinearLayout
-        android:id="@+id/listViewOrderShipmentDetails"
+        android:id="@+id/sdfs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
