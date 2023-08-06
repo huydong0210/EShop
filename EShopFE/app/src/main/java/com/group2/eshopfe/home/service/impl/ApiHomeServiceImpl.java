@@ -110,4 +110,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
         return apiHomeService.updateStatusOrderDetailsToPendingPickUp(id, shipmentDetailsDTO);
     }
 
+    @Override
+    public Call<ResponseObject> getAllOrderDetailsInProcessing() {
+        return apiHomeService.getAllOrderDetailsInProcessing();
+    }
+
 }

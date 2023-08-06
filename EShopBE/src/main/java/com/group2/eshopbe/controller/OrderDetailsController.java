@@ -98,4 +98,20 @@ public class OrderDetailsController {
                 ""
         ));
     }
+    @GetMapping("/in-processing")
+    public ResponseEntity<ResponseObject> getAllOrderDetailsInProcessing(){
+        EUser user = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get()).get();
+        List<OrderDetails> orderDetailsList = user.getOrderDetailsList();
+        List<OrderDetailsDTO> result = new ArrayList<>();
+        orderDetailsList.forEach(orderDetails -> {
+            if (!orderDetails.getStatus().equals(Constants.IN_CART)){
+                result.add(Mapper.buildOrderDetailsDTO(orderDetails));
+            }
+        });
+        return ResponseEntity.ok(new ResponseObject(
+                ResponseObject.SUCCESS,
+                "",
+                Mapper.convertObjectToJson(result)
+        ));
+    }
 }

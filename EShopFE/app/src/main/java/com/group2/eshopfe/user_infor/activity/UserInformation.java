@@ -33,7 +33,7 @@ public class UserInformation extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ImageButton imageButtonUser, imageButtonHome, imageButtonCart, imageButtonLogout;
     TextView textViewUserName, textViewUserEmail, textViewUserPhone;
-    View viewUserLogout, viewShipmentDetails;
+    View viewUserLogout, viewShipmentDetails, viewUserOrderDetailsInProcessing;
     ImageView imageViewUserAvatar;
 
     @Override
@@ -101,6 +101,7 @@ public class UserInformation extends AppCompatActivity {
         textViewUserPhone =findViewById(R.id.textViewUserPhone);
 
         imageViewUserAvatar = findViewById(R.id.imageViewUserAvatar);
+        viewUserOrderDetailsInProcessing = findViewById(R.id.viewUserOrderDetailsInProcessing);
 
     }
     private void addEvents(){
@@ -137,6 +138,14 @@ public class UserInformation extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        viewUserOrderDetailsInProcessing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(UserInformation.this, OrderDetailsInProcessingActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

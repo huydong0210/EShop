@@ -54,5 +54,7 @@ public interface ApiHomeService {
     Call<ResponseObject> getOrderDetailsByID(@Path("id") Long id);
     @PUT("api/order-details/{id}")
     Call<ResponseObject> updateStatusOrderDetailsToPendingPickUp(@Path("id") Long id, @Body ShipmentDetailsDTO shipmentDetailsDTO);
+    @GET("/api/order-details/in-processing")
+    Call<ResponseObject> getAllOrderDetailsInProcessing();
 
 }
