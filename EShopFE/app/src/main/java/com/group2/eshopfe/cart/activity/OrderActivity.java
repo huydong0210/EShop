@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,12 +24,14 @@ import com.group2.eshopfe.payload.ResponseObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class OrderActivity extends AppCompatActivity {
+    private final String KEY_SHIPMENT_DETAILS_ID_IN_USE = "KEY_SHIPMENT_DETAILS_ID_IN_USE";
     Button buttonOrderConfirm, buttonOrderBack;
     ObjectMapper objectMapper = new ObjectMapper();
     TextView textViewOrderProductName, textViewOrderProductPrice, textViewOrderProductAmount, textViewOrderTotalPrice;
@@ -36,13 +39,14 @@ public class OrderActivity extends AppCompatActivity {
     OrderShipmentDetailsAdapter orderShipmentDetailsAdapter;
     List<ShipmentDetailsDTO> shipmentDetailsDTOList = new ArrayList<>();
     TextView textViewOrderName, textViewOrderPhone, textViewOrderAddress;
+    Long orderDetailsID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         Intent intent = getIntent();
-        Long orderDetailsID = intent.getLongExtra("orderDetailsID", 0);
+        orderDetailsID = intent.getLongExtra("orderDetailsID", 0);
 
         SharedPreferences sharedPreferences = getSharedPreferences(Constant.ORDER_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -116,6 +120,17 @@ public class OrderActivity extends AppCompatActivity {
         buttonOrderConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences sharedPreferences = getSharedPreferences(Constant.ORDER_PREFERENCES, MODE_PRIVATE);
+                String shipmentDetailsID = sharedPreferences.getString(KEY_SHIPMENT_DETAILS_ID_IN_USE, "-1");
+                if (shipmentDetailsID.equals("-1")){
+                    Toast.makeText(OrderActivity.this, "Bạn chưa chọn địa chỉ giao hàng", Toast.LENGTH_SHORT).show();
+                } else {
+                    Optional<ShipmentDetailsDTO> shipmentDetailsDTO = shipmentDetailsDTOList.stream().filter(detailsDTO ->
+                            detailsDTO.getId().toString().equals(shipmentDetailsID)).findAny();
+                    if (shipmentDetailsDTO.isPresent()){
+                        buttonOrderConfirmHandler(orderDetailsID, shipmentDetailsDTO.get());
+                    }
+                }
 
             }
         });
@@ -126,5 +141,27 @@ public class OrderActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void buttonOrderConfirmHandler(Long id, ShipmentDetailsDTO shipmentDetailsDTO){
+
+        ApiHomeServiceImpl.getInstances().setSharedPreferences(getSharedPreferences(Constant.PREFERENCES, Context.MODE_PRIVATE));
+        ApiHomeServiceImpl.getInstances().updateStatusOrderDetailsToPendingPickUp(id, shipmentDetailsDTO).enqueue(new Callback<ResponseObject>() {
+            @Override
+            public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
+                if (response.errorBody() == null) {
+                    Toast.makeText(OrderActivity.this, "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(OrderActivity.this, CartActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(OrderActivity.this, "Đặt hàng thất bại", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseObject> call, Throwable t) {
+
+            }
+        });
+
     }
 }

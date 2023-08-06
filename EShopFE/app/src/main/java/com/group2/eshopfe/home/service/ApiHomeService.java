@@ -21,6 +21,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ApiHomeService {
@@ -51,5 +52,7 @@ public interface ApiHomeService {
     Call<ResponseObject> addNewShipmentDetails(@Body ShipmentDetailsDTO shipmentDetailsDTO);
     @GET("/api/order-details/{id}")
     Call<ResponseObject> getOrderDetailsByID(@Path("id") Long id);
+    @PUT("api/order-details/{id}")
+    Call<ResponseObject> updateStatusOrderDetailsToPendingPickUp(@Path("id") Long id, @Body ShipmentDetailsDTO shipmentDetailsDTO);
 
 }

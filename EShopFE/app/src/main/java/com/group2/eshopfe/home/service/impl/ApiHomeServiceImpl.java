@@ -105,4 +105,9 @@ public class ApiHomeServiceImpl implements ApiHomeService {
         return apiHomeService.getOrderDetailsByID(id);
     }
 
+    @Override
+    public Call<ResponseObject> updateStatusOrderDetailsToPendingPickUp(Long id, ShipmentDetailsDTO shipmentDetailsDTO) {
+        return apiHomeService.updateStatusOrderDetailsToPendingPickUp(id, shipmentDetailsDTO);
+    }
+
 }

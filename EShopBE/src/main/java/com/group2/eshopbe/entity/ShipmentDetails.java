@@ -6,6 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -28,8 +30,10 @@ public class ShipmentDetails {
     @ToString.Exclude
     private EUser user;
 
-    @OneToOne(mappedBy = "shipmentDetails")
-    private OrderDetails orderDetails;
+    @OneToMany(mappedBy = "shipmentDetails", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private List<OrderDetails> orderDetailsList;
 
 
 }

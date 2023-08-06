@@ -2,13 +2,16 @@ package com.group2.eshopbe.controller;
 
 import com.group2.eshopbe.DTO.Mapper;
 import com.group2.eshopbe.DTO.OrderDetailsDTO;
+import com.group2.eshopbe.DTO.ShipmentDetailsDTO;
 import com.group2.eshopbe.common.Constants;
 import com.group2.eshopbe.entity.EUser;
 import com.group2.eshopbe.entity.OrderDetails;
 import com.group2.eshopbe.entity.Product;
+import com.group2.eshopbe.entity.ShipmentDetails;
 import com.group2.eshopbe.payload.response.ResponseObject;
 import com.group2.eshopbe.repository.OrderDetailsRepository;
 import com.group2.eshopbe.repository.ProductRepository;
+import com.group2.eshopbe.repository.ShipmentDetailsRepository;
 import com.group2.eshopbe.repository.UserRepository;
 import com.group2.eshopbe.security.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,8 @@ public class OrderDetailsController {
     UserRepository userRepository;
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    ShipmentDetailsRepository shipmentDetailsRepository;
     @GetMapping
     public ResponseEntity<ResponseObject> getAllOrderDetailsInCart(){
         List<OrderDetails> orderDetailsList = userRepository.findByUsername(SecurityUtils.getCurrentUserLogin().get()).get().getOrderDetailsList();
@@ -79,6 +84,18 @@ public class OrderDetailsController {
                 "" ,
                 Mapper.convertObjectToJson(Mapper.buildOrderDetailsDTO(orderDetails))
         ));
-
+    }
+    @PutMapping(("/{id}"))
+    public ResponseEntity<ResponseObject> updateStatusOrderDetailsToPendingPickUp(@PathVariable Long id, @RequestBody ShipmentDetailsDTO shipmentDetailsDTO){
+        OrderDetails orderDetails = orderDetailsRepository.findById(id).get();
+        ShipmentDetails shipmentDetails = shipmentDetailsRepository.findById(shipmentDetailsDTO.getId()).get();
+        orderDetails.setShipmentDetails(shipmentDetails);
+        orderDetails.setStatus(Constants.PENDING_PICKUP);
+        orderDetailsRepository.save(orderDetails);
+        return ResponseEntity.ok(new ResponseObject(
+                ResponseObject.SUCCESS,
+                "",
+                ""
+        ));
     }
 }

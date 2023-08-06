@@ -26,8 +26,10 @@ public class Product {
     @Column(name = "unit")
     private String unit;
 
-    @OneToOne(mappedBy = "product")
-    private OrderDetails orderDetails;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private List<OrderDetails> orderDetailsList;
 
     @OneToOne(mappedBy = "product")
     private Inventory inventory;

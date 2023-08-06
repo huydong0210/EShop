@@ -28,12 +28,16 @@ public class OrderDetails {
     @ToString.Exclude
     private EUser user;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Product product;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "shipment_details_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "shipment_details_id")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private ShipmentDetails shipmentDetails;
 
 
