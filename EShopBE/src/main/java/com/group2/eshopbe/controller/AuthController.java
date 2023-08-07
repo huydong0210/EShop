@@ -1,10 +1,12 @@
 package com.group2.eshopbe.controller;
 
 import com.group2.eshopbe.entity.EUser;
+import com.group2.eshopbe.entity.Image;
 import com.group2.eshopbe.entity.Role;
 import com.group2.eshopbe.payload.request.LoginRequest;
 import com.group2.eshopbe.payload.request.SignUpRequest;
 import com.group2.eshopbe.payload.response.ResponseObject;
+import com.group2.eshopbe.repository.ImageRepository;
 import com.group2.eshopbe.repository.RoleRepository;
 import com.group2.eshopbe.repository.UserRepository;
 import com.group2.eshopbe.security.AuthorityConstants;
@@ -39,6 +41,8 @@ public class AuthController {
     PasswordEncoder passwordEncoder;
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    ImageRepository imageRepository;
     @PostMapping("/authenticate")
     public ResponseEntity<ResponseObject> authenticate(@RequestBody LoginRequest loginRequest) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
@@ -56,10 +60,19 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseObject(ResponseObject.FAIL, "Username is existed", signUpRequest));
         }
         EUser user= new EUser();
+
+        Image image = new Image();
+        Image defauftImage = imageRepository.findById(0L).get();
+        image.setImageData(defauftImage.getImageData());
+        image.setType(defauftImage.getType());
+        image.setName(signUpRequest.getUsername());
+        imageRepository.save(image);
+
         user.setUsername(signUpRequest.getUsername());
         user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
         user.setEmail(signUpRequest.getEmail());
         user.setPhone(signUpRequest.getPhone());
+        user.setImage(imageRepository.findByName(signUpRequest.getUsername()).get());
         List<Role> roles = new ArrayList<>();
         roles.add(roleRepository.findByName(AuthorityConstants.ROLE_USER).get());
         user.setRoles(roles);
