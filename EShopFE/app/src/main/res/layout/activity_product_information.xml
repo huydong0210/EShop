@@ -10,32 +10,46 @@
     <ImageView
         android:id="@+id/imageViewProductInforImage"
         android:layout_width="match_parent"
-        android:layout_height="800px"
+        android:layout_height="400dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/textViewProductInforName"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="280dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewProductInforPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/textViewProductInforName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="TextView"
+            android:textSize="65px" />
 
-    <TextView
-        android:id="@+id/textViewProductInforQuantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/textViewProductInforPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="TextView"
+            android:textSize="65px" />
 
-    <TextView
-        android:id="@+id/textViewProductInforDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/textViewProductInforQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="TextView"
+            android:textSize="45px" />
+
+        <TextView
+            android:id="@+id/textViewProductInforDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="TextView"
+            android:textSize="45px" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
