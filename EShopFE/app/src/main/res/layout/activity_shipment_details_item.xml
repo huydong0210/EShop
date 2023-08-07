@@ -42,7 +42,7 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/buttonCartOrderDetailsDeleteItem"
+            android:id="@+id/buttonShipmentDetailsItemDelete"
             android:layout_width="380dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
