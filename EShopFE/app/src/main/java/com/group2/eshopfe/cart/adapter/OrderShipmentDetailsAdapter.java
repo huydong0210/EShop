@@ -42,7 +42,7 @@ public class OrderShipmentDetailsAdapter extends ArrayAdapter<ShipmentDetailsDTO
         TextView textViewOrderShipmentDetailsItemAddress = orderShipmentDetailsView.findViewById(R.id.textViewOrderShipmentDetailsItemAddress);
         TextView textViewOrderShipmentDetailsIsUse = orderShipmentDetailsView.findViewById(R.id.textViewOrderShipmentDetailsItemIsUse);
 
-        Button buttonOrderShipmentDetailsItemSelect = orderShipmentDetailsView.findViewById(R.id.buttonOrderShipmentDetailsItemSelect);
+        View buttonOrderShipmentDetailsItemSelect = orderShipmentDetailsView.findViewById(R.id.buttonOrderShipmentDetailsItemSelect);
 
         ShipmentDetailsDTO shipmentDetailsDTO = getItem(position);
 

@@ -21,7 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class NewShipmentDetailsActivity extends AppCompatActivity {
-    Button buttonNewShipmentDetailsSave, buttonNewShipmentDetailsBack;
+    View buttonNewShipmentDetailsSave, buttonNewShipmentDetailsBack;
     EditText editTextNewShipmentDetailsName, editTextNewShipmentDetailsPhone, editTextNewShipmentDetailsAddress;
 
     @Override

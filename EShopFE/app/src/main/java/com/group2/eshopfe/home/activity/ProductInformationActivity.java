@@ -29,7 +29,7 @@ public class ProductInformationActivity extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ImageView imageViewProductInformationImage;
     TextView textViewProductInformationName, textViewProductInformationPrice, textViewProductInformationQuantity, textViewProductInformationDescription;
-    Button buttonProductInformationAddToCart, buttonProductInformationHome;
+    View buttonProductInformationAddToCart, buttonProductInformationHome;
     Long productId;
 
     @Override

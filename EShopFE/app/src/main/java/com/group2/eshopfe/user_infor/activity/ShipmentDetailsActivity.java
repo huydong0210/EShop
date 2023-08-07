@@ -29,7 +29,7 @@ public class ShipmentDetailsActivity extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ListView listViewShipmentDetailsList;
 
-    Button buttonShipmentDetailsAdd, buttonShipmentDetailsBack;
+    View buttonShipmentDetailsAdd, buttonShipmentDetailsBack;
     ShipmentDetailsAdapter shipmentDetailsAdapter;
     List<ShipmentDetailsDTO> shipmentDetailsDTOList = new ArrayList<>();
 

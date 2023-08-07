@@ -10,64 +10,105 @@
     <ImageView
         android:id="@+id/imageViewProductInforImage"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="1100px"
+        android:background="@drawable/rectangle_8"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/textViewProductInforName"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="25dp" />
 
-        <TextView
-            android:id="@+id/textViewProductInforName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="TextView"
-            android:textSize="65px" />
+    <TextView
+        android:textSize="25dp"
+        android:id="@+id/textViewProductInforPrice"
+        android:layout_width="390dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="33dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#0000ff" />
 
-        <TextView
-            android:id="@+id/textViewProductInforPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="TextView"
-            android:textSize="65px" />
+    <TextView
+        android:id="@+id/textViewProductInforQuantity"
+        android:layout_width="390dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        />
 
-        <TextView
-            android:id="@+id/textViewProductInforQuantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="TextView"
-            android:textSize="45px" />
-
-        <TextView
-            android:id="@+id/textViewProductInforDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="TextView"
-            android:textSize="45px" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewProductInforDescription"
+        android:layout_width="390dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textSize="15dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/buttonProductInforAddToCart"
+        <RelativeLayout
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Thêm vào giỏ" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/buttonProductInforHome"
+            <View
+                android:id="@+id/buttonProductInforHome"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/next"
+                android:layout_width="150dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Trang chủ"
+                android:textAlignment="center"
+                android:textColor="@color/next_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/buttonSignUpSignUp"
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Trang chủ" />
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/buttonProductInforAddToCart"
+
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Thêm vào giỏ hàng"
+                android:textAlignment="center"
+                android:textColor="@color/next_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

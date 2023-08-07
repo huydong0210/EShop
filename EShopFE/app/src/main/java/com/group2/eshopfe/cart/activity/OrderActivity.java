@@ -32,7 +32,7 @@ import retrofit2.Response;
 
 public class OrderActivity extends AppCompatActivity {
     private final String KEY_SHIPMENT_DETAILS_ID_IN_USE = "KEY_SHIPMENT_DETAILS_ID_IN_USE";
-    Button buttonOrderConfirm, buttonOrderBack;
+    View buttonOrderConfirm, buttonOrderBack;
     ObjectMapper objectMapper = new ObjectMapper();
     TextView textViewOrderProductName, textViewOrderProductPrice, textViewOrderProductAmount, textViewOrderTotalPrice;
     ListView listViewOrderShipmentDetails;

@@ -32,7 +32,7 @@ import retrofit2.Response;
 public class OrderDetailsInProcessingActivity extends AppCompatActivity {
     ObjectMapper objectMapper = new ObjectMapper();
     ListView listViewOrderDetailsInProcessing;
-    Button buttonOrderDetailsInProcessing;
+    View buttonOrderDetailsInProcessing;
     List<OrderDetailsDTO> orderDetailsDTOInProcessingList;
     OrderDetailsInProcessingAdapter orderDetailsInProcessingAdapter;
 

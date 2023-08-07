@@ -28,19 +28,17 @@ public class ShipmentDetailsAdapter extends ArrayAdapter<ShipmentDetailsDTO> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater layoutInflater = this.context.getLayoutInflater();
-        View shipmentDetailsItemView = layoutInflater.inflate(this.resource,null);
+        View shipmentDetailsItemView = layoutInflater.inflate(this.resource, null);
 
         TextView textViewShipmentDetailsItemName = shipmentDetailsItemView.findViewById(R.id.textViewShipmentDetailsItemName);
         TextView textViewShipmentDetailsItemAddress = shipmentDetailsItemView.findViewById(R.id.textViewShipmentDetailsItemAddress);
         TextView textViewShipmentDetailsItemPhone = shipmentDetailsItemView.findViewById(R.id.textViewShipmentDetailsItemPhone);
 
-        Button buttonShipmentDetailsItemDelete = shipmentDetailsItemView.findViewById(R.id.buttonShipmentDetailsItemDelete);
 
         ShipmentDetailsDTO shipmentDetails = getItem(position);
-        textViewShipmentDetailsItemName.setText(shipmentDetails.getFullName());
-        textViewShipmentDetailsItemPhone.setText(shipmentDetails.getPhone());
-        textViewShipmentDetailsItemAddress.setText(shipmentDetails.getAddress());
-
+        textViewShipmentDetailsItemName.setText("Tên: " + shipmentDetails.getFullName());
+        textViewShipmentDetailsItemPhone.setText("Số điện thoại: " + shipmentDetails.getPhone());
+        textViewShipmentDetailsItemAddress.setText("Địa chỉ: " + shipmentDetails.getAddress());
 
 
         return shipmentDetailsItemView;

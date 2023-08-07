@@ -9,19 +9,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="680dp"
+        android:layout_height="424dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thêm địa chỉ giao hàng" />
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:text="Thêm địa chỉ giao hàng"
+            android:textAlignment="center"
+            android:textColor="#0000ff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextNewShipmentDetailsName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rectangle_7"
             android:ems="10"
             android:hint="Tên người nhận"
             android:inputType="text" />
@@ -29,7 +39,11 @@
         <EditText
             android:id="@+id/editTextNewShipmentDetailsPhone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rectangle_7"
             android:ems="10"
             android:hint="Số điện thoại"
             android:inputType="phone" />
@@ -37,7 +51,11 @@
         <EditText
             android:id="@+id/editTextNewShipmentDetailsAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rectangle_7"
             android:ems="10"
             android:hint="Địa chỉ"
             android:inputType="text" />
@@ -47,21 +65,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/buttonNewShipmentDetailsSave"
+        <RelativeLayout
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Lưu" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/buttonNewShipmentDetailsBack"
+            <View
+                android:id="@+id/buttonNewShipmentDetailsSave"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/next"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/next_color"
+                android:layout_marginTop="5dp"
+                android:layout_width="180dp"
+                android:layout_height="37dp"
+                android:textAlignment="center"
+                android:text="Lưu" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/buttonSignUpSignUp"
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Trở về" />
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/buttonNewShipmentDetailsBack"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:layout_weight="1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/next_color"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:textAlignment="center"
+                android:text="Trở về" />
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
