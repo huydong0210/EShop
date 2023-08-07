@@ -42,13 +42,13 @@ public class OrderShipmentDetailsAdapter extends ArrayAdapter<ShipmentDetailsDTO
         TextView textViewOrderShipmentDetailsItemAddress = orderShipmentDetailsView.findViewById(R.id.textViewOrderShipmentDetailsItemAddress);
         TextView textViewOrderShipmentDetailsIsUse = orderShipmentDetailsView.findViewById(R.id.textViewOrderShipmentDetailsItemIsUse);
 
-        View buttonOrderShipmentDetailsItemSelect = orderShipmentDetailsView.findViewById(R.id.buttonOrderShipmentDetailsItemSelect);
+        Button buttonOrderShipmentDetailsItemSelect = orderShipmentDetailsView.findViewById(R.id.buttonOrderShipmentDetailsItemSelect);
 
         ShipmentDetailsDTO shipmentDetailsDTO = getItem(position);
 
-        textViewOrderShipmentDetailsItemName.setText(shipmentDetailsDTO.getFullName());
-        textViewOrderShipmentDetailsItemPhone.setText(shipmentDetailsDTO.getPhone());
-        textViewOrderShipmentDetailsItemAddress.setText(shipmentDetailsDTO.getAddress());
+        textViewOrderShipmentDetailsItemName.setText("Tên người nhận: " + shipmentDetailsDTO.getFullName());
+        textViewOrderShipmentDetailsItemPhone.setText("Số điện thoại: " + shipmentDetailsDTO.getPhone());
+        textViewOrderShipmentDetailsItemAddress.setText("Địa chỉ: " +shipmentDetailsDTO.getAddress());
 
         SharedPreferences sharedPreferences = this.context.getSharedPreferences(Constant.ORDER_PREFERENCES, Context.MODE_PRIVATE);
         String shipmentDetailsIDInUse = sharedPreferences.getString(KEY_SHIPMENT_DETAILS_ID_IN_USE, "");
